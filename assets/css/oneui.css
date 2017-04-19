@@ -1,6 +1,7 @@
 /*!
 * OneUI - v3.1.0 - Auto-compiled on 2017-01-13 - Copyright 2017 
 * @author pixelcave
+* Pagination -> Paginationoneui
 */
 html,
 body {
@@ -1481,16 +1482,16 @@ input[type="email"].form-control {
 .nav-pills > li.active > a > .badge {
   color: #5c90d2;
 }
-.pagination {
+.paginationoneui {
   border-radius: 0;
 }
-.pagination > li {
+.paginationoneui > li {
   display: block;
   float: left;
   margin: 0 0 5px 5px;
 }
-.pagination > li > a,
-.pagination > li > span {
+.paginationoneui > li > a,
+.paginationoneui > li > span {
   display: block;
   float: none;
   margin: 0;
@@ -1500,42 +1501,42 @@ input[type="email"].form-control {
   font-weight: 600;
   border: none;
 }
-.pagination > li:first-child > a,
-.pagination > li:first-child > span {
+.paginationoneui > li:first-child > a,
+.paginationoneui > li:first-child > span {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
-.pagination > li:last-child > a,
-.pagination > li:last-child > span {
+.paginationoneui > li:last-child > a,
+.paginationoneui > li:last-child > span {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
-.pagination > li > a:hover,
-.pagination > li > span:hover,
-.pagination > li > a:focus,
-.pagination > li > span:focus {
+.paginationoneui > li > a:hover,
+.paginationoneui > li > span:hover,
+.paginationoneui > li > a:focus,
+.paginationoneui > li > span:focus {
   color: #5c90d2;
   background-color: transparent;
   -webkit-box-shadow: 0 2px #5c90d2;
   box-shadow: 0 2px #5c90d2;
 }
-.pagination > .active > a,
-.pagination > .active > span,
-.pagination > .active > a:hover,
-.pagination > .active > span:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span:focus {
+.paginationoneui > .active > a,
+.paginationoneui > .active > span,
+.paginationoneui > .active > a:hover,
+.paginationoneui > .active > span:hover,
+.paginationoneui > .active > a:focus,
+.paginationoneui > .active > span:focus {
   color: #5c90d2;
   background-color: #f9f9f9;
   -webkit-box-shadow: 0 2px #5c90d2;
   box-shadow: 0 2px #5c90d2;
 }
-.pagination > .disabled > span,
-.pagination > .disabled > span:hover,
-.pagination > .disabled > span:focus,
-.pagination > .disabled > a,
-.pagination > .disabled > a:hover,
-.pagination > .disabled > a:focus {
+.paginationoneui > .disabled > span,
+.paginationoneui > .disabled > span:hover,
+.paginationoneui > .disabled > span:focus,
+.paginationoneui > .disabled > a,
+.paginationoneui > .disabled > a:hover,
+.paginationoneui > .disabled > a:focus {
   color: #c9c9c9;
   -webkit-box-shadow: none;
   box-shadow: none;

@@ -1,0 +1,11 @@
+Plugins:
+- Sweetalerts 2 (https://limonte.github.io/sweetalert2/)
+- Datetables for jquery (https://datatables.net/)
+- Jquery CountTo (https://github.com/mhuggins/jquery-countTo)
+- Dropzone.js (http://www.dropzonejs.com/  https://github.com/enyo/dropzone)
+- FileUploader (https://innostudio.de/fileuploader/)
+
+Templates:
+- Realty Space v2.22
+- Oneui_v310
+- eelectronics-ecommerce

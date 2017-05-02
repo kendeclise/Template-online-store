@@ -6063,7 +6063,7 @@ fieldset[disabled] .form-material.floating > label {
   background-color: #999999;
 }
 .switch-primary input:checked + span {
-  background-color: #5c90d2;
+  background-color: #1abc9c;
 }
 .switch-info input:checked + span {
   background-color: #70b9eb;
@@ -6082,6 +6082,13 @@ fieldset[disabled] .form-material.floating > label {
   background-color: #fff;
   -webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.01);
   box-shadow: 0 2px rgba(0, 0, 0, 0.01);
+  
+}
+
+.block.pure {
+ 
+   border: 1px solid #EFEFEF;
+ 
 }
 .block .block,
 .side-content .block {

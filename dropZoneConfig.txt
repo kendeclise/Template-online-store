@@ -1,0 +1,42 @@
+//Para usar divs con dropzone, se debe desactivar la autobúsqueda de dropzones
+        Dropzone.autoDiscover = false;
+        //Se instancia el div como un dropzone       
+        $('#imagenesRegistrar').dropzone({
+            //Opciones de nuestro
+            url: "uploads.php",
+            addRemoveLink:true,
+            removeLinks: true,
+            dictDefaultMessage: "Arrastra las imagenes Aquí !!",//Texto del dropzone
+            acceptedFiles: "image/jpeg,image/png,image/gif",
+            maxFilesize: 0.5,//tamaño en megas
+            uploadMultiple: false,
+            createImageThumbnails: true, //Miniaturas
+            maxFiles: 3, //Número de archivos máximo
+            autoProcessQueue: false, //Previene que dropzone suba inmediatamente las fotos
+            maxfilesexceeded: function(file) { //Si se pasa el número de archivos permitidos se ejecuta este método                
+                this.removeFile(file);//Quito los archivos que causaron que se sobrepasara el número(variable file)
+            },
+            init: function(){
+                dropZone = this;
+                dropZone.on("addedfile",function(file){//Cuando se agrega un archivo, se ejecuta esta función, file -> representa los files insertados
+                    
+                    file.previewElement.addEventListener("click", function() {
+                            dropZone.removeFile(file);
+                            alert('Hackerman');
+                    });
+
+                });
+
+                 //myDropzone.processQueue(); -> para mandar el form y hacer la petición ajax
+                  /*this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
+                      // Make sure that the form isn't actually being sent.
+                      e.preventDefault();
+                      e.stopPropagation();
+                      myDropzone.processQueue();
+                  });*/
+                  //https://github.com/enyo/dropzone/wiki/Combine-normal-form-with-Dropzone
+
+
+            }
+        
+        });

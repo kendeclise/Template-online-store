@@ -27,6 +27,7 @@
   * Warning Color ($warningColor): #f3bc65
   * Danger Color ($dangerColor): #e95b35
   Pagination -> Paginationoneui
+  droppdown -> dropdownvendor
   @mixin =============================================================*/
 
 a {

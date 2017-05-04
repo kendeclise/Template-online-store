@@ -40,10 +40,6 @@ jQuery(document).ready(function($){
 
     });
 
-    //Iniciando los fileInputLoader
-    $('input[name="fileRegistrarMarca"]').fileuploader({
-            
-	});
 
    
    //Esconder la barra de búsqueda que trae datatables por default
@@ -64,7 +60,7 @@ jQuery(document).ready(function($){
 		//Resetamos algunos campos
 		$('.input-texto-registrar').css("background","#CFCECE");
 		$('#input-textoRegistrarMarca').text("subir logotipo");
-
+		$('#inputLogo-registrarMarca').val("");
 
 	});
 
@@ -311,6 +307,20 @@ jQuery(document).ready(function($){
     		var filename = e.target.value.split('\\').pop();
     		$('#input-textoRegistrarMarca').text(filename);
     		$('.input-texto-registrar').css("background","#1abc9c");
+
+
+    		//Cargando la imagen
+    		var reader = new FileReader();
+
+		      // Función que se ejecutará cuando se cargue el file
+		      reader.onload = function(event) {
+					$('#img-registrar-marca-logotipo').attr("src",event.target.result);     
+		      };
+
+		      // Lectura del url del file
+		      reader.readAsDataURL(files[0]);
+
+
     		//$('.input-texto').css("border-bottom","4px solid #d99221");
     	}else{
 

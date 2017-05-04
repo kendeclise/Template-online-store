@@ -50,9 +50,7 @@
     <!-- tablas -->
     <link rel="stylesheet" href="assets/js/plugins/datatables/jquery.dataTables.min.css">
 
-   <!-- FileUploader -->
-    <link rel="stylesheet" type="text/css" href="assets/js/plugins/Fileuploader/jquery.fileuploader.css">
-    <!-- End FileUploader -->
+ 
 
     <!-- Estilos personales -->
 
@@ -359,34 +357,44 @@
                                                 <h3 class="block-title pull-left" style="padding-top:5px">Registrar Marca</h3><span class="close" id="cerraModalMarca" data-dismiss="modal">&times;</span>
                                             </div>
                                             <div class="block-content">
-                                                <form id="form-RegistrarMarca" class="form-horizontal push-5-t" action="" method="post" onsubmit="return false;" enctype="multipart/form-data">                                                                                        
-                                                    <div class="form-group">
-                                                        <label class="col-xs-12" for="txtNombre-registrarMarca">Nombre</label>
-                                                        <div class="col-xs-12">
-                                                            <input class="form-control" type="text" id="txtNombre-registrarMarca" name="txtNombre-registrarMarca" placeholder="Nombre de la marca..">
+                                                <form id="form-RegistrarMarca" class="form-horizontal push-5-t" action="" method="post" onsubmit="return false;" enctype="multipart/form-data">                            
+
+                                                    
+
+                                                    <div class="col-xs-8">
+
+                                                        <div class="form-group">
+                                                            <label for="txtNombre-registrarMarca">Nombre</label>
+                                                            <div>
+                                                                <input class="form-control" type="text" id="txtNombre-registrarMarca" name="txtNombre-registrarMarca" placeholder="Nombre de la marca..">
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-xs-12" for="txtDescripcion-registrarMarca">Descripción</label>
-                                                        <div class="col-xs-12">
-                                                            <textarea class="form-control" id="txtDescripcion-registrarMarca" name="txtDescripcion-registrarMarca" rows="7" placeholder="Descripción de la marca.."></textarea>
+
+                                                        <div class="form-group">
+                                                            <label  for="txtDescripcion-registrarMarca">Descripción</label>
+                                                            <div>
+                                                                <textarea class="form-control" id="txtDescripcion-registrarMarca" name="txtDescripcion-registrarMarca" rows="7" placeholder="Descripción de la marca.."></textarea>
+                                                            </div>
                                                         </div>
                                                     </div>
 
-                                                    <div class="form-group">
-                                                        <div class="col-xs-12">
-                                                             <input type="file" name="inputLogo-registrarMarca" id = "inputLogo-registrarMarca">
-                                                        </div>
+                                                    <div class="col-xs-4" style="padding-right:0">
+                                                        
+                                                            <div class="foto-logo">
+                                                                <img id="img-registrar-marca-logotipo" alt="logotipo">
+                                                            </div>
+                                                            <label for="inputLogo-registrarMarca" class="input-texto input-texto-registrar"><i class="fa fa-upload"></i><span id="input-textoRegistrarMarca">subir logotipo</span></label><input type="file" id="inputLogo-registrarMarca" name="inputLogo-registrarMarca" class="archivo hidden">
+                                                        
                                                     </div>
+
+                                                  
                                                    
                                                     
 
                                                     <div class="form-group">
+                                                       
                                                         <div class="col-xs-6">
-                                                            <label for="inputLogo-registrarMarca" class="input-texto input-texto-registrar"><i class="fa fa-upload"></i><span id="input-textoRegistrarMarca">subir logotipo</span></label><input type="file" id="inputLogo-registrarMarca" name="inputLogo-registrarMarca" class="archivo hidden">
-                                                        </div>
-                                                        <div class="col-xs-6">
-                                                                <button class="btn btn-sm btn-success pull-right" type="submit" id="btnRegistrarMarca"><i class="fa fa-check push-5-r"></i> Guardar cambios</button>
+                                                                <button class="btn btn-sm btn-success" type="submit" id="btnRegistrarMarca"><i class="fa fa-check push-5-r"></i> Guardar cambios</button>
                                                         </div>
                                                     </div>
                                                     
@@ -658,8 +666,7 @@
     <!-- Datetables pluggin -->  
     <script src="assets/js/pages/base_tables_datatables.js"></script>
 
-    <!-- FileUploader -->
-    <script src="assets/js/plugins/Fileuploader/jquery.fileuploader.js"></script>
+    
    
 
     <!-- Scripts personales -->

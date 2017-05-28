@@ -237,10 +237,43 @@
                                               <br>
                                               <br>
                                               
-                    
+                    <!-- Stats -->
+                    <div class="row text-uppercase text-center">
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="block block-rounded" style="border: 0.5px solid #e6e6e6">
+                                <div class="block-content block-content-full">
+                                    <div class="font-s12 font-w700">Productos</div>
+                                    <a class="h2 font-w300 text-primary" href="javascript:void(0)">8</a>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="block block-rounded">
+                                <div class="block-content block-content-full" style="border: 0.5px solid #e6e6e6">
+                                    <div class="font-s12 font-w700">Vendidos</div>
+                                    <a class="h2 font-w300 text-primary" href="javascript:void(0)">63000</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="block block-rounded">
+                                <div class="block-content block-content-full" style="border: 0.5px solid #e6e6e6">
+                                    <div class="font-s12 font-w700">Ganancias</div>
+                                    <a class="h2 font-w300 text-primary" href="javascript:void(0)">$ 980600</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Stats -->
 
 
-                    
+                    <!-- Mensajes Flash -->
+                    <div class="alert alert-danger alert-dismissible text-center" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                      El producto fue eliminado con éxito.
+                    </div>
 
 
 
@@ -252,163 +285,319 @@
                     <!-- Products -->
                     <div class="block block-rounded">
                         <div class="block-header">
-                    	<!-- cajas cabecera --> 
-							<div class="row">
-		                        <div class="col-sm-6 col-md-3">
-		                            <a class="block pure block-link-hover3 text-center" href="base_pages_ecom_product_edit.html">
-		                                <div class="block-content block-content-full">
-		                                    <div class="h1 font-w700 text-success"><i class="fa fa-plus"></i></div>
-		                                </div>
-		                                <div class="block-content block-content-full block-content-mini bg-gray-lighter text-success font-w600">Nuevo Producto</div>
-		                            </a>
-		                        </div>
-		                        <div class="col-sm-6 col-md-3">
-		                            <a class="block pure block-link-hover3 text-center" href="javascript:void(0)">
-		                                <div class="block-content block-content-full">
-		                                    <div class="h1 font-w700 text-danger contador" data-from="0" data-to="15" data-speed="500" data-refresh-interval="1">0</div>
-		                                </div>
-		                                <div class="block-content block-content-full block-content-mini bg-gray-lighter text-danger font-w600">Sin Stock</div>
-		                            </a>
-		                        </div>
-		                        <div class="col-sm-6 col-md-3">
-		                            <a class="block pure block-link-hover3 text-center" href="javascript:void(0)">
-		                                <div class="block-content block-content-full">
-		                                    <div class="h1 font-w700 contador" data-from="0" data-to="100" data-speed="500" data-refresh-interval="1">0</div>
-		                                </div>
-		                                <div class="block-content block-content-full block-content-mini bg-gray-lighter text-muted font-w600">Top Ventas</div>
-		                            </a>
-		                        </div>
-		                        <div class="col-sm-6 col-md-3">
-		                            <a class="block pure block-link-hover3 text-center" href="javascript:void(0)">
-		                                <div class="block-content block-content-full">
-		                                    <div class="h1 font-w700 contador" data-from="0" data-to="8750" data-speed="500" data-refresh-interval="1">0</div>
-		                                </div>
-		                                <div class="block-content block-content-full block-content-mini bg-gray-lighter text-muted font-w600">Total</div>
-		                            </a>
-		                        </div>
-		                    </div>
+                           
+
+                            <!-- Filtros -->
+                            
+                           
+                            <label class="pull-left" style="padding-top:10px;">FILTRO POR: </label>
+
+                             <select id="FiltroCategoria" class="form-control pull-left" style="width:30%;margin-left:10px" name="filtroCategoria">
+                                <option>Elija una Categoría</option>
+                                <option>Categoria 1</option>
+                                <option>Categoria 2</option>
+                              </select>
+                             
+                            
+                           
+                             <select id="FiltroMarca" class="form-control pull-left" style="width:30%;margin-left:10px">
+                                <option>Elija una Marca</option>
+                                <option>Marca 1</option>
+                                <option>Marca 2</option>
+                              </select>
+
+                               <!-- Botón Añadir Nuevo Producto -->
+                                <a href="dashboard_nuevo_producto.html" class="widget__btn js-widget-btn widget__btn--action pull-right">Nuevo Producto</a>
+
+                                          
+                    
 
 
-                        <!-- fin caja cabecera -->
+                            <!-- Fin Filtros -->    
                         </div>
-
-                        
-
-	
-						<div class="block-content" >
-						<!-- Filtros -->
-						<div class="block-header bg-gray-lighter">
-                            <ul class="block-options">
-                                <li class="dropdown">
-                                    <button type="button" data-toggle="dropdown">Filtros <span class="caret"></span></button>
-                                    <ul class="dropdown-menu dropdown-menu-right">
-                                        <li>
-                                            <a tabindex="-1" href="javascript:void(0)"><span class="badge pull-right">90</span>Nuevos</a>
-                                        </li>
-                                        <li>
-                                            <a tabindex="-1" href="javascript:void(0)"><span class="badge pull-right">15</span>Sin Stock</a>
-                                        </li>
-                                        <li class="dropdown-submenu dropdown-menu-right">
-                                            <a tabindex="-1" href="javascript:void(0)"><span class="badge pull-right">10</span>Categorías</a>
-                                            <ul class="dropdown-menu">
-                                            	<li><a tabindex="-1" href="javascript:void(0)"><span class="badge pull-right">15</span>Categoria #1</a></li>
-                                            	<li><a tabindex="-1" href="javascript:void(0)"><span class="badge pull-right">15</span>Categoria #2</a></li>
-                                            	<li><a tabindex="-1" href="javascript:void(0)"><span class="badge pull-right">15</span>Categoria #3</a></li>
-                                            	<li><a tabindex="-1" href="javascript:void(0)"><span class="badge pull-right">15</span>Categoria #4</a></li>
-                                            </ul>
-                                        </li>
-                                       	<li class="dropdown-submenu dropdown-menu-right">
-                                            <a tabindex="-1" href="javascript:void(0)"><span class="badge pull-right">15</span>Marcas</a>
-                                            <ul class="dropdown-menu">
-                                            	<li><a tabindex="-1" href="javascript:void(0)"><span class="badge pull-right">15</span>Marca #1</a></li>
-                                            	<li><a tabindex="-1" href="javascript:void(0)"><span class="badge pull-right">15</span>Marca #2</a></li>
-                                            	<li><a tabindex="-1" href="javascript:void(0)"><span class="badge pull-right">15</span>Marca #3</a></li>
-                                            	<li><a tabindex="-1" href="javascript:void(0)"><span class="badge pull-right">15</span>Marca #4</a></li>
-                                            </ul>
-                                        </li>                                       
-                                        <li>
-                                            <a tabindex="-1" href="javascript:void(0)"><span class="badge pull-right">8750</span>Todos</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <h3 class="block-title">Todos los Productos</h3>
-                        </div>
-
-
-						<!-- fin Filtros -->
-                        
-
-						<!-- TABLA DE PRODUCTOS -->
-						
-						<table class="table table-borderless table-striped table-vcenter" ><!--style=" border: 1px solid #ddd"-->
-                                <thead>
-                                    <tr>
-                                        <th class="text-center" style="width: 100px;">ID</th>
-                                        <th class="visible-lg text-center">Producto</th>
-                                        <th class="hidden-xs text-center">Agregado</th>
-                                        <th>Estado</th>
-                                        <th class="hidden-xs text-right">Valor</th>
-                                        <th class="text-center">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-center">
-                                            <a class="font-" href="dasboard_producto_editar.html">
-                                                <strong>PID.01535</strong>
-                                            </a>
-                                        </td>
-                                        <td class="visible-lg text-center">
-                                            <a href="dasboard_producto_editar.html">Razer Kraken v2.0</a>
-                                        </td>
-                                        <td class="hidden-xs text-center">26/01/2015</td>
-                                        <td>
-                                            <span class="label label-danger">Sin Stock</span>
-                                        </td>
-                                        <td class="text-right hidden-xs">
-                                            <strong>S/.40,00</strong>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="btn-group btn-group-xs">
-                                                <a href="dasboard_producto_editar.html" data-toggle="tooltip" title="Detalles" class="btn btn-default"><i class="fa fa-eye"></i></a>
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Borrar" class="btn btn-default"><i class="fa fa-times text-danger"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">
-                                            <a class="font-" href="dasboard_producto_editar.html">
-                                                <strong>PID.01534</strong>
-                                            </a>
-                                        </td>
-                                        <td class="visible-lg text-center">
-                                            <a href="dasboard_producto_editar.html">Memoria Sodimm ddr3 4GB</a>
-                                        </td>
-                                        <td class="hidden-xs text-center">11/09/2015</td>
-                                        <td>
-                                            <span class="label label-success">Disponible</span>
-                                        </td>
-                                        <td class="text-right hidden-xs">
-                                            <strong>S/.30,00</strong>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="btn-group btn-group-xs">
-                                                <a href="dasboard_producto_editar.html" data-toggle="tooltip" title="Detalles" class="btn btn-default"><i class="fa fa-eye"></i></a>
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Borrar" class="btn btn-default"><i class="fa fa-times text-danger"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                        <div class="block-content">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-vcenter">
                                     
-                                </tbody>
-                            </table>
-						</div>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center" style="width: 200px;">
+                                                <div style="width: 180px;">
+                                                    <img class="img-responsive" src="assets/img/various/mcbookpro.jpg" alt="">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h4>Mcbook Pro 2016</h4>
+                                                <a class="font-w600" href="javascript:void(0)">Id: 1</a>
+                                                <p class="remove-margin-b"><span style="color:gray">Marca: </span>Apple</p>
+                                                <p class="remove-margin-b"><span style="color:gray">Categoría: </span> Laptops</p>
+                                            </td>
+                                            <td>
+                                                <p class="remove-margin-b">Stock: <span class="text-gray-dark">15</span></p>
+                                                <p>Vendidos: <span class="text-gray-dark"> 225</span></p>
+                                                <button class="btn btn-xs btn-default" type="button">
+                                                    <i class="fa fa-times push-5-r text-danger"></i>Eliminar
+                                                </button>
+                                                <button class="btn btn-xs btn-default" type="button">
+                                                    <i class="fa fa-pencil push-5-r text-success"></i>Editar
+                                                </button>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="h1 font-w700 text-success">S/.1800</span>
+                                                <p class="remove-margin-b">15 unidades</p>
+                                                <span class="text-warning">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>                                                    
+                                                </span>
+                                                <p class="remove-margin-b font-s12">50 Calificaciones</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="text-center" style="width: 200px;">
+                                                <div style="width: 180px;">
+                                                    <img class="img-responsive" src="assets/img/various/ecom_product7.png" alt="">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h4>Minecraft 2017</h4>
+                                                <a class="font-w600" href="javascript:void(0)">Id: 2</a>
+                                                <p class="remove-margin-b"><span style="color:gray">Marca: </span>Ubisoft</p>
+                                                <p class="remove-margin-b"><span style="color:gray">Categoría: </span> Games</p>
+                                            </td>
+                                            <td>
+                                                <p class="remove-margin-b">Stock: <span class="text-gray-dark">150</span></p>
+                                                <p>Vendidos: <span class="text-gray-dark"> 590</span></p>
+                                                <button class="btn btn-xs btn-default hidden" type="button">
+                                                    <i class="fa fa-times push-5-r text-danger"></i>Eliminar
+                                                </button>
+                                                <button class="btn btn-xs btn-default" type="button">
+                                                    <i class="fa fa-pencil push-5-r text-success"></i>Editar
+                                                </button>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="h1 font-w700 text-success">S/.250</span>
+                                                <p class="remove-margin-b">150 unidades</p>
+                                                <span class="text-warning">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>                                                    
+                                                </span>
+                                                <p class="remove-margin-b font-s12">320 Calificaciones</p>
+                                            </td>
+                                        </tr>
 
 
 
-
-						<!-- FIN TABLA PRODUCTOS -->
-                       
+                                        <tr>
+                                            <td class="text-center">
+                                                <div style="width: 180px;">
+                                                    <img class="img-responsive" src="assets/img/various/ecom_product12.png" alt="">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h4>e-Music</h4>
+                                                <p class="remove-margin-b">Music streaming service</p>
+                                                <a class="font-w600" href="javascript:void(0)">design_agency</a>
+                                            </td>
+                                            <td>
+                                                <p class="remove-margin-b">Purchases: <span class="text-gray-dark">9337</span></p>
+                                                <p>Item Sales: <span class="text-gray-dark">$466.850</span></p>
+                                                <button class="btn btn-xs btn-default" type="button">
+                                                    <i class="fa fa-download push-5-r text-primary"></i>Download
+                                                </button>
+                                                <button class="btn btn-xs btn-default" type="button">
+                                                    <i class="fa fa-pencil push-5-r text-success"></i>Edit
+                                                </button>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="h1 font-w700 text-success">$50</span>
+                                                <p class="remove-margin-b">9337 purchases</p>
+                                                <span class="text-warning">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                                <p class="remove-margin-b font-s12">859 Ratings</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div style="width: 180px;">
+                                                    <img class="img-responsive" src="assets/img/various/ecom_product11.png" alt="">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h4>Todo App</h4>
+                                                <p class="remove-margin-b">All your tasks in one place</p>
+                                                <a class="font-w600" href="javascript:void(0)">design_agency</a>
+                                            </td>
+                                            <td>
+                                                <p class="remove-margin-b">Purchases: <span class="text-gray-dark">6950</span></p>
+                                                <p>Item Sales: <span class="text-gray-dark">$319.700</span></p>
+                                                <button class="btn btn-xs btn-default" type="button">
+                                                    <i class="fa fa-download push-5-r text-primary"></i>Download
+                                                </button>
+                                                <button class="btn btn-xs btn-default" type="button">
+                                                    <i class="fa fa-pencil push-5-r text-success"></i>Edit
+                                                </button>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="h1 font-w700 text-success">$46</span>
+                                                <p class="remove-margin-b">6950 purchases</p>
+                                                <span class="text-warning">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                                <p class="remove-margin-b font-s12">1020 Ratings</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div style="width: 180px;">
+                                                    <img class="img-responsive" src="assets/img/various/ecom_product8.png" alt="">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h4>Antivir</h4>
+                                                <p class="remove-margin-b">Antivirus protection for all</p>
+                                                <a class="font-w600" href="javascript:void(0)">design_agency</a>
+                                            </td>
+                                            <td>
+                                                <p class="remove-margin-b">Purchases: <span class="text-gray-dark">6560</span></p>
+                                                <p>Item Sales: <span class="text-gray-dark">$249.280</span></p>
+                                                <button class="btn btn-xs btn-default" type="button">
+                                                    <i class="fa fa-download push-5-r text-primary"></i>Download
+                                                </button>
+                                                <button class="btn btn-xs btn-default" type="button">
+                                                    <i class="fa fa-pencil push-5-r text-success"></i>Edit
+                                                </button>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="h1 font-w700 text-success">$38</span>
+                                                <p class="remove-margin-b">6560 purchases</p>
+                                                <span class="text-warning">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                                <p class="remove-margin-b font-s12">760 Ratings</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div style="width: 180px;">
+                                                    <img class="img-responsive" src="assets/img/various/ecom_product2.png" alt="">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h4>Mailday</h4>
+                                                <p class="remove-margin-b">Pro email templates</p>
+                                                <a class="font-w600" href="javascript:void(0)">design_agency</a>
+                                            </td>
+                                            <td>
+                                                <p class="remove-margin-b">Purchases: <span class="text-gray-dark">9220</span></p>
+                                                <p>Item Sales: <span class="text-gray-dark">$479.440</span></p>
+                                                <button class="btn btn-xs btn-default" type="button">
+                                                    <i class="fa fa-download push-5-r text-primary"></i>Download
+                                                </button>
+                                                <button class="btn btn-xs btn-default" type="button">
+                                                    <i class="fa fa-pencil push-5-r text-success"></i>Edit
+                                                </button>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="h1 font-w700 text-success">$52</span>
+                                                <p class="remove-margin-b">9220 purchases</p>
+                                                <span class="text-warning">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                                <p class="remove-margin-b font-s12">669 Ratings</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div style="width: 180px;">
+                                                    <img class="img-responsive" src="assets/img/various/ecom_product4.png" alt="">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h4>Steam Games</h4>
+                                                <p class="remove-margin-b">3-in-1 Adventure Pack</p>
+                                                <a class="font-w600" href="javascript:void(0)">design_agency</a>
+                                            </td>
+                                            <td>
+                                                <p class="remove-margin-b">Purchases: <span class="text-gray-dark">7560</span></p>
+                                                <p>Item Sales: <span class="text-gray-dark">$400.680</span></p>
+                                                <button class="btn btn-xs btn-default" type="button">
+                                                    <i class="fa fa-download push-5-r text-primary"></i>Download
+                                                </button>
+                                                <button class="btn btn-xs btn-default" type="button">
+                                                    <i class="fa fa-pencil push-5-r text-success"></i>Edit
+                                                </button>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="h1 font-w700 text-success">$53</span>
+                                                <p class="remove-margin-b">7560 purchases</p>
+                                                <span class="text-warning">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                                <p class="remove-margin-b font-s12">865 Ratings</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div style="width: 180px;">
+                                                    <img class="img-responsive" src="assets/img/various/ecom_product6.png" alt="">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h4>Super Badges Pack</h4>
+                                                <p class="remove-margin-b">1000s of high quality badges</p>
+                                                <a class="font-w600" href="javascript:void(0)">design_agency</a>
+                                            </td>
+                                            <td>
+                                                <p class="remove-margin-b">Purchases: <span class="text-gray-dark">8980</span></p>
+                                                <p>Item Sales: <span class="text-gray-dark">$520.840</span></p>
+                                                <button class="btn btn-xs btn-default" type="button">
+                                                    <i class="fa fa-download push-5-r text-primary"></i>Download
+                                                </button>
+                                                <button class="btn btn-xs btn-default" type="button">
+                                                    <i class="fa fa-pencil push-5-r text-success"></i>Edit
+                                                </button>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="h1 font-w700 text-success">$58</span>
+                                                <p class="remove-margin-b">8980 purchases</p>
+                                                <span class="text-warning">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                                <p class="remove-margin-b font-s12">798 Ratings</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                     <!-- END Products -->
                     
@@ -623,16 +812,13 @@
 
     <!-- Script tablas -->
     <script src="assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
-
-
-    <!-- Count to -->
-    <script src="assets/js/core/jquery.countTo.min.js"></script>
     
-
+    <!-- iniciando tablas -->  
+    <script src="assets/js/pages/base_tables_datatables.js"></script>
 
 
     <!-- Scripts personales -->
-    <script type="text/javascript" src="js/scripts-personales/dashboard_productos.js"></script>
+    <script type="text/javascript" src="js/scripts-personales.js"></script>
     
     
 

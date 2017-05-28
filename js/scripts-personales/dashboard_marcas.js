@@ -58,6 +58,7 @@ jQuery(document).ready(function($){
 	//Cuando clickeo el boton que abre el modal registrar Marca:
 	$('#registra-marca').click(function(){
 		//Resetamos algunos campos
+		$('#img-registrar-marca-logotipo').attr("src","Imagenes/Image.jpg");     
 		$('.input-texto-registrar').css("background","#CFCECE");
 		$('#input-textoRegistrarMarca').text("subir logotipo");
 		$('#inputLogo-registrarMarca').val("");
@@ -150,12 +151,14 @@ jQuery(document).ready(function($){
 		var parent = $(this).parents('tr');
 		//Capturamos el id
 		var idMarca = parent.data('idmar');
+		var validacionLogo = false; //Si sigue en false es que no editaron la foto
 
 		//Capturo la ruta de la imagen, y la cargo al input
 		//value="C:\\WebServers\\Gazeta\\images\\29\\Banner.gif" <-
 		//$('.input-texto-editar').val('Marca_1.jpg');
 		$('.input-texto-editar').css("background","#1abc9c");
 		$('#input-textoEditarMarca').text("Marca_1.jpg");
+		$('#img-editar-marca-logotipo').attr("src","Imagenes/Marcas/Marca_1.jpg");   
 
 		//Hacer una consulta usando el id,ajax y el controlador
 
@@ -347,6 +350,19 @@ jQuery(document).ready(function($){
     		$('#input-textoEditarMarca').text(filename);
     		$('.input-texto-editar').css("background","#1abc9c");
     		//$('.input-texto').css("border-bottom","4px solid #d99221");
+    		
+    		//Cargando la imagen
+    		var reader = new FileReader();
+
+		      // Función que se ejecutará cuando se cargue el file
+		      reader.onload = function(event) {
+					$('#img-editar-marca-logotipo').attr("src",event.target.result);     
+		      };
+
+		      // Lectura del url del file
+		      reader.readAsDataURL(files[0]);
+
+
     	}else{
 
     	}

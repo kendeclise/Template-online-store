@@ -433,10 +433,13 @@
                                                 <h3 class="block-title pull-left" style="padding-top:5px">Editar Marca</h3><span class="close" id="cerraModalMarca" data-dismiss="modal">&times;</span>
                                             </div>
                                             <div class="block-content">
-                                                <form class="form-horizontal push-5-t" action="" method="post" onsubmit="return false;" > 
-                                                    <div class="form-group">                                            
+                                                <form id="form-EditarMarca" class="form-horizontal push-5-t" action="" method="post" onsubmit="return false;" enctype="multipart/form-data" > 
+
+
+
+                                                    <!-- <div class="form-group">                                            
                                                         <div class="col-xs-12">
-                                                            <input class="form-control" type="hidden" id="txtId-editarMarca" name="txtNombre-editarMarca">
+                                                            <input class="form-control" type="hidden" id="txtId-editarMarca" name="txtId-editarMarca">
                                                         </div>
                                                     </div>                                       
                                                     <div class="form-group">
@@ -459,7 +462,46 @@
                                                         <div class="col-xs-6">
                                                                 <button class="btn btn-sm btn-success pull-right" type="submit" id="btnEditarMarca"><i class="fa fa-check push-5-r"></i> Guardar cambios</button>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
+
+                                                        <div class="col-xs-8">
+
+                                                            <input class="form-control" type="hidden" id="txtId-editarMarca" name="txtId-editarMarca">
+                                                            
+                                                            <div class="form-group">
+                                                                <label for="txtNombre-editarMarca">Nombre</label>
+                                                                <div>
+                                                                    <input class="form-control" type="text" id="txtNombre-editarMarca" name="txtNombre-editarMarca" placeholder="Nombre de la marca..">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label  for="txtDescripcion-editarMarca">Descripción</label>
+                                                                <div>
+                                                                    <textarea class="form-control" id="txtDescripcion-editarMarca" name="txtDescripcion-editarMarca" rows="7" placeholder="Descripción de la marca.."></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-xs-4" style="padding-right:0">
+                                                            
+                                                                <div class="foto-logo">
+                                                                    <img id="img-editar-marca-logotipo" alt="logotipo">
+                                                                </div>
+                                                                <label for="inputLogo-editarMarca" class="input-texto input-texto-editar"><i class="fa fa-upload"></i><span id="input-textoEditarMarca">subir logotipo</span></label><input type="file" id="inputLogo-editarMarca" name="inputLogo-editarMarca" class="archivo hidden">
+                                                            
+                                                        </div>
+
+                                                      
+                                                       
+                                                        
+
+                                                        <div class="form-group">
+                                                           
+                                                            <div class="col-xs-6">
+                                                                    <button class="btn btn-sm btn-success" type="submit" id="btnEditarMarca"><i class="fa fa-check push-5-r"></i> Guardar cambios</button>
+                                                            </div>
+                                                        </div>
 
                                                   
                                                 </form>

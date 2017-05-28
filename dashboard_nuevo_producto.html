@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 
-    
+    <!-- Estilos personales -->
+    <link rel="stylesheet" type="text/css" href="css/estilos-personales.css">
+    <!-- Fin estilos personales -->
     <!-- Template realty space v 2.22 -->
     
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7cSource+Sans+Pro:200,400,600,700,900,400italic,700italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -42,7 +44,6 @@
     <link rel="stylesheet" id="css-main" href="assets/css/oneui.css">
     <!-- EndTemplate OneUI -->
 
-   
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -227,186 +228,320 @@
                                            
 							<div class="widget js-widget widget--dashboard"> <!-- Contenido contenedor blanco -->
 
-								<!-- Cajas cabecera -->
-							
-				                    <div class="row hidden">
-				                        <div class="col-xs-6 col-sm-4">
-				                            <a class="block pure block-link-hover3 text-center" href="javascript:void(0)">
-				                                <div class="block-content block-content-full">
-				                                    <div class="h1 font-w700 contador" data-from="0" data-to="250" data-speed="500" data-refresh-interval="1">0</div>
-				                                </div>
-				                                <div class="block-content block-content-full block-content-mini bg-gray-lighter text-muted font-w600">En ordenes</div>
-				                            </a>
-				                        </div>
-				                        <div class="col-xs-6 col-sm-4">
-				                            <a class="block pure block-link-hover3 text-center" href="javascript:void(0)">
-				                                <div class="block-content block-content-full">
-				                                    <div class="h1 font-w700 contador text-success" data-from="0" data-to="123" data-speed="500" data-refresh-interval="1">0</div>
-				                                </div>
-				                                <div class="block-content block-content-full block-content-mini bg-gray-lighter text-success font-w600">Disponibles</div>
-				                            </a>
-				                        </div>
-				                        <div class="col-xs-12 col-sm-4">
-				                            <a class="block pure block-link-hover3 text-center" href="javascript:void(0)">
-				                                <div class="block-content block-content-full">
-				                                    <div class="h1 font-w700 text-danger"><i class="fa fa-times"></i></div>
-				                                </div>
-				                                <div class="block-content block-content-full block-content-mini bg-gray-lighter text-danger font-w600">Eliminar Producto</div>
-				                            </a>
-				                        </div>
-
-				                    </div>
-      
-								<!-- Fin cajas cabecera -->
 	
 								<!-- Registro de Producto -->
 			                    <div class="block pure">
-			                        <div class="block-header bg-gray-lighter">
-			                            <h3 class="block-title">REGISTRAR PRODUCTO</h3>
-			                        </div>
-			                        <div class="block-content block-content-full">
-			                            <div class="row">
-			                                <div class="col-md-12">
-			                                    <form class="form-horizontal push-30-t push-30" action="" method="post" onsubmit="return false;" id="formulario-registrar-producto">
-			                                        <div class="form-group">
-			                                            <div class="col-xs-6">
-			                                                <div class="form-material form-material-success">
-			                                                    <input class="form-control" type="text" id="producto-id" name="producto-id" value="PID.00531" readonly>
-			                                                    <label for="product-id">Código</label>
-			                                                </div>
-			                                            </div>
-			                                        </div>
-			                                        <div class="form-group">
-			                                            <div class="col-xs-6">
-			                                                <div class="form-material form-material-success">
-			                                                    <input class="form-control" type="text" id="producto-nombre" name="producto-nombre" value="">
-			                                                    <label for="producto-nombre">Nombre</label>
-			                                                </div>
-			                                            </div>
-			                                        </div>
-			                                        <div class="form-group">
-			                                            <div class="col-xs-12 push-10">
-			                                                <div class="form-material form-material-success">
-			                                                    <label>Descripción</label>
-			                                                </div>
-			                                            </div>
-			                                            <div class="col-xs-12 push-10">
-			                                                <!-- CKEditor Container -->
-			                                                <textarea id="producto-descripcion" name="producto-descripcion"></textarea>
-			                                            </div>
-			                                        </div>
-			                                       
-			                                        <div class="form-group">
-			                                            <div class="col-xs-12">
-			                                                <!-- Select2 (.js-select2 class is initialized in App() -> uiHelperSelect2()) -->
-			                                                <!-- For more info and examples you can check out https://github.com/select2/select2 -->
-			                                                <div class="form-material">
-			                                                    <select class="js-select2 form-control" id="product-category" name="product-category" style="width: 100%;" data-placeholder="Choose one..">
-			                                                        <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
-			                                                        <option value="1">Cables</option>
-			                                                        <option value="2" selected>Elija una marca</option>
-			                                                     
-			                                                    </select>
-			                                                    <label for="example2-select2">Categoría</label>
-			                                                </div>
-			                                            </div>
-			                                        </div>
+                                    <div class="block-header bg-gray-lighter">
+                                        <h3 class="block-title">REGISTRAR PRODUCTO</h3>
+                                    </div>
+			                         <form class="form-horizontal push-30-t" action="" method="post" onsubmit="return false;" id="formulario-registrar-producto">
+                                        <div class="block-content block-content-full">
+                                            <div class="row">
+                                                <div class="col-md-12">    			                                      
+                                                        <div class="col-xs-5">
+                                                                <div class="form-group">
+                                                                    <div class="form-material form-material-producto">
+                                                                        <input class="form-control" type="text" id="producto-id" name="producto-id" value="PID.00531" readonly>
+                                                                        <label for="product-id">Código</label>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="col-xs-5 col-md-offset-2">
+                                                            <div class="form-group">
+                                                                <div class="form-material form-material-producto">
+                                                                    <input class="form-control" type="text" id="producto-nombre" name="producto-nombre" value="" placeholder="Ingrese un nombre para el producto">
+                                                                    <label for="producto-nombre">Nombre</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+    			                                        <div class="form-group">
+    			                                            <div class="col-xs-12 push-10">
+    			                                                <div class="form-material form-material-producto">
+    			                                                    <label>Descripción</label>
+    			                                                </div>
+    			                                            </div>
 
-													<div class="form-group">
-			                                            <div class="col-xs-12">
-			                                                <!-- Select2 (.js-select2 class is initialized in App() -> uiHelperSelect2()) -->
-			                                                <!-- For more info and examples you can check out https://github.com/select2/select2 -->
-			                                                <div class="form-material">
-			                                                    <select class="js-select2 form-control" id="product-category" name="product-category" style="width: 100%;" data-placeholder="Choose one..">
-			                                                        <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
-			                                                        <option value="1">Cables</option>
-			                                                        <option value="2" selected>Elija una categoría</option>
-			                                                     
-			                                                    </select>
-			                                                    <label for="example2-select2">Marcas</label>
-			                                                </div>
-			                                            </div>
-			                                        </div>
-													
-													<div class="form-group">
-			                                            <div class="col-xs-12">
-			                                                <div class="form-material form-material-success">
-			                                                    <input class="form-control" type="number" id="producto-precio-compra" name="producto-precio-compra" value="0" step="0.01" min="0" max="99999">
-			                                                    <label for="producto-precio-compra">Precio de compra (S/.)</label>
-			                                                </div>
-			                                            </div>
-			                                        </div>
+    			                                            <div class="col-xs-12 push-10">
+    			                                                <!-- CKEditor Container -->
+    			                                                <textarea id="producto-descripcion" name="producto-descripcion"></textarea>
+    			                                            </div>
+    			                                        </div>
+    			                                       
 
-			                                        <div class="form-group">
-			                                            <div class="col-xs-12">
-			                                                <div class="form-material form-material-success">
-			                                                    <input class="form-control" type="number" id="producto-precio-venta" name="producto-precio-venta" value="0" step="0.01" max="99999">
-			                                                    <label for="producto-precio-venta">Precio de venta (S/.)</label>
-			                                                </div>
-			                                            </div>
-			                                        </div>
-		
-													<div class="form-group">
-			                                            <label class="col-xs-12">¿Está en oferta?</label>
-			                                            <div class="col-xs-12">
-			                                                <label class="css-input switch switch-sm switch-primary">
-			                                                    <input type="checkbox" id="producto-check-oferta" name="producto-check-oferta"><span></span>
-			                                                </label>
-			                                            </div>
-			                                        </div>
+    			                                         <div class="col-xs-5">
+                                                            <div class="form-group">
+    			                                                
+    			                                                <div class="form-material">
+    			                                                    <select class="form-control" id="producto-categorias" name="producto-categorias" style="width: 100%;">                                                    
+    			                                                        <option value="0">Elija una categoría</option>
+                                                                        <option value="1">Audifonos</option>
+    			                                                     
+    			                                                    </select>
+    			                                                    <label for="producto-categorias">Categoría</label>
+    			                                                </div>
+    			                                            </div>
+    			                                        </div>
 
-			                                        <div class="form-group hidden">
-			                                            <div class="col-xs-12">
-			                                                <div class="form-material form-material-success">
-			                                                    <input class="form-control" type="number" id="producto-precio-oferta" name="producto-precio-oferta" value="0" step="0.01" max="99999">
-			                                                    <label for="producto-precio-venta">Precio de oferta (S/.)</label>
-			                                                </div>
-			                                            </div>
-			                                        </div>
+    			                                         <div class="col-xs-5 col-md-offset-2">
+                                                            <div class="form-group">
+                                                                
+                                                                <div class="form-material">
+                                                                    <select class="form-control" id="producto-marcas" name="producto-marcas" style="width: 100%;">                                                    
+                                                                        <option value="0">Elija una marca</option>
+                                                                        <option value="1">Razer</option>
+                                                                     
+                                                                    </select>
+                                                                    <label for="producto-marcas">Marca</label>
+                                                                </div>
+                                                            </div>
+    			                                        </div>
+    													
+    			                                         <div class="col-xs-5">
+                                                            <div class="form-group">
+    			                                                <div class="form-material form-material-producto">
+    			                                                    <input class="form-control" type="number" id="producto-precio-compra" name="producto-precio-compra" value="" step="0.01" min="0" max="99999" placeholder="0,0">
+    			                                                    <label for="producto-precio-compra">Precio de compra (S/.)</label>
+    			                                                </div>
+    			                                            </div>
+    			                                        </div>
 
-			                                        <div class="form-group">
-			                                            <div class="col-xs-12">
-			                                                <div class="form-material form-material-success">
-			                                                    <input class="form-control" type="number" id="producto-stock" name="producto-stock" value="0" min="0" max="1000">
-			                                                    <label for="producto-precio-venta">Cantidad</label>
-			                                                </div>
-			                                            </div>
-			                                        </div>
-			                                        
-			                                        <div class="form-group">
-			                                            <label class="col-xs-12">¿Desea Publicarlo?</label>
-			                                            <div class="col-xs-12">
-			                                                <label class="css-input switch switch-sm switch-primary">
-			                                                    <input type="checkbox" id="producto-publicado" name="producto-publicado" checked><span></span>
-			                                                </label>
-			                                            </div>
-			                                        </div>
+    			                                         <div class="col-xs-5 col-md-offset-2">
+                                                            <div class="form-group">
+    			                                                <div class="form-material form-material-producto">
+    			                                                    <input class="form-control" type="number" id="producto-precio-venta" name="producto-precio-venta" value="" step="0.01" max="99999" placeholder="0,0">
+    			                                                    <label for="producto-precio-venta">Precio de venta (S/.)</label>
+    			                                                </div>
+    			                                            </div>
+    			                                        </div>
 
 
-													<div class="form-group">
-			                                            <label class="col-xs-12">Galería de fotos</label>
-			                                            <div class="col-xs-12">
-			                                                <div class="form-material form-material-success">
+    		                                            <div class="col-xs-5">
+        													<div class="form-group">
+        			                                            <label for="producto-check-oferta">¿Está en oferta?</label>
+        			                                            <div>
+        			                                                <label class="css-input switch switch-sm switch-primary">
+        			                                                    <input type="checkbox" id="producto-check-oferta" name="producto-check-oferta"><span></span>
+        			                                                </label>
+        			                                            </div>
+        			                                        </div>
+                                                        </div>
+
+                                                        <div class="col-xs-5 col-md-offset-2">
+                                                            <div class="form-group precio-de-oferta hidden">
+                                                                <div class="form-material form-material-producto">
+                                                                    <input class="form-control" type="number" id="producto-precio-oferta" name="producto-precio-oferta" value="" step="0.01" max="99999" placeholder="0,0">
+                                                                    <label for="producto-precio-oferta">Precio de Oferta (S/.)</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+    			                                        <div class="clearfix"></div>
+
+    			                                         <div class="col-xs-5">
+                                                            <div class="form-group">
+    			                                                <div class="form-material form-material-producto">
+    			                                                    <input class="form-control" type="number" id="producto-stock" name="producto-stock" value="" min="0" max="1000" placeholder="Ingrese el número de artículos">
+    			                                                    <label for="producto-stock">Cantidad</label>
+    			                                                </div>
+    			                                            </div>
+    			                                        </div>
+    			                                        
+                                                        <div class="col-xs-12">
+        			                                        <div class="form-group">
+        			                                            <label for="producto-publicado">¿Desea Publicarlo?</label>
+        			                                            <div>
+        			                                                <label class="css-input switch switch-sm switch-primary">
+        			                                                    <input type="checkbox" id="producto-publicado" name="producto-publicado" checked><span></span>
+        			                                                </label>
+        			                                            </div>
+        			                                        </div>
+                                                        </div>
+
+    													
+    			                                        
+    			                                    
+    			                                </div>
+    			                            </div>
+    			                        </div>
+
+                                        <div class="block-header bg-gray-lighter">
+                                            <h3 class="block-title">GALERÍA DE FOTOS</h3>
+                                        </div>
+                                        <div class="block-content block-content-full">
+                                            <div class="row">
+
+                                                <!-- Galería de fotos del producto -->
+                                                    
+                                                 <div class="col-sm-6 col-md-4 col-lg-4 animated fadeIn">
+                                                     <div class="img-container fx-img-rotate-r" style="border:1px solid #f9f9f9">
+                                                         <img class="img-responsive" src="Imagenes/Image.jpg" alt="imagen-prod-1" id='imagen-producto-1'>
+                                                         <div class="img-options">
+                                                            <div class="img-options-content">
+                                                                <h3 class="font-w400 text-white push-5">Imagen 1</h3>
+                                                                <h4 class="h6 font-w400 text-white-op push-15">PID.00531</h4>
+                                                                <a class="btn btn-sm btn-default img-lightbox" href="javascript:void(0)" id="btn-detalles-imagen-1">
+                                                                    <i class="fa fa-search-plus"></i> Ver
+                                                                </a>
+                                                                <div class="btn-group btn-group-sm">
+                                                                    <a class="btn btn-default" href="javascript:void(0)" id="btn-editar-imagen-1"><i class="fa fa-pencil"></i> Editar</a>
+                                                                    <a class="btn btn-default" href="javascript:void(0)" id="btn-borrar-imagen-1"><i class="fa fa-times"></i> Borrar</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                     </div>
+                                                 </div>
+
+                                                 <!-- Input file -> input-imagen-1 -->
+                                                 <input type="file" id="input-imagen-1" accept="image/x-png,image/gif,image/jpeg" class="hidden" name="input-imagen-1">
 
 
-			                                                </div>
-			                                            </div>
-			                                        </div>
+                                                 <div class="col-sm-6 col-md-4 col-lg-4 animated fadeIn">
+                                                     <div class="img-container fx-img-rotate-r" style="border:1px solid #f9f9f9">
+                                                         <img class="img-responsive" src="Imagenes/Image.jpg" alt="imagen-prod-2" id='imagen-producto-2'>
+                                                         <div class="img-options">
+                                                            <div class="img-options-content">
+                                                                <h3 class="font-w400 text-white push-5">Imagen 2</h3>
+                                                                <h4 class="h6 font-w400 text-white-op push-15">PID.00531</h4>
+                                                                <a class="btn btn-sm btn-default img-lightbox" href="#">
+                                                                    <i class="fa fa-search-plus"></i> Ver
+                                                                </a>
+                                                                <div class="btn-group btn-group-sm">
+                                                                    <a class="btn btn-default" href="javascript:void(0)" id="btn-editar-imagen-2"><i class="fa fa-pencil"></i> Editar</a>
+                                                                    <a class="btn btn-default" href="javascript:void(0)"><i class="fa fa-times"></i> Borrar</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                     </div>
+                                                 </div>
+
+                                                 <!-- Input file -> input-imagen-2 -->
+                                                 <input type="file" id="input-imagen-2" accept="image/x-png,image/gif,image/jpeg" class="hidden" name="input-imagen-2">
+
+                                                 <div class="col-sm-6 col-md-4 col-lg-4 animated fadeIn push-15">
+                                                     <div class="img-container fx-img-rotate-r" style="border:1px solid #f9f9f9">
+                                                         <img class="img-responsive" src="Imagenes/Image.jpg" alt="imagen-prod-3" id='imagen-producto-3'>
+                                                         <div class="img-options">
+                                                            <div class="img-options-content">
+                                                                <h3 class="font-w400 text-white push-5">Imagen 3</h3>
+                                                                <h4 class="h6 font-w400 text-white-op push-15">PID.00531</h4>
+                                                                <a class="btn btn-sm btn-default img-lightbox" href="#">
+                                                                    <i class="fa fa-search-plus"></i> Ver
+                                                                </a>
+                                                                <div class="btn-group btn-group-sm">
+                                                                    <a class="btn btn-default" href="javascript:void(0)" id="btn-editar-imagen-3"><i class="fa fa-pencil"></i> Editar</a>
+                                                                    <a class="btn btn-default" href="javascript:void(0)"><i class="fa fa-times"></i> Borrar</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                     </div>
+                                                 </div>
+
+                                                 <!-- Input file -> input-imagen-3 -->
+                                                 <input type="file" id="input-imagen-3" accept="image/x-png,image/gif,image/jpeg" class="hidden" name="input-imagen-3">
 
 
-			                                        <div class="form-group">
-			                                            <div class="col-xs-12">
-			                                                <button class="btn btn-sm btn-primary" type="submit">Registrar</button>
-			                                            </div>
-			                                        </div>
-			                                    </form>
-			                                </div>
-			                            </div>
-			                        </div>
+
+                                                 <div class="col-sm-6 col-md-4 col-lg-4 animated fadeIn">
+                                                     <div class="img-container fx-img-rotate-r" style="border:1px solid #f9f9f9">
+                                                         <img class="img-responsive" src="Imagenes/Image.jpg" alt="imagen-prod-4" id='imagen-producto-4'>
+                                                         <div class="img-options">
+                                                            <div class="img-options-content">
+                                                                <h3 class="font-w400 text-white push-5">Imagen 4</h3>
+                                                                <h4 class="h6 font-w400 text-white-op push-15">PID.00531</h4>
+                                                                <a class="btn btn-sm btn-default img-lightbox" href="#">
+                                                                    <i class="fa fa-search-plus"></i> Ver
+                                                                </a>
+                                                                <div class="btn-group btn-group-sm">
+                                                                    <a class="btn btn-default" href="javascript:void(0)" id="btn-editar-imagen-4"><i class="fa fa-pencil"></i> Editar</a>
+                                                                    <a class="btn btn-default" href="javascript:void(0)"><i class="fa fa-times"></i> Borrar</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                     </div>
+                                                 </div>
+
+                                                 <!-- Input file -> input-imagen-4 -->
+                                                 <input type="file" id="input-imagen-4" accept="image/x-png,image/gif,image/jpeg" class="hidden" name="input-imagen-4">
+
+                                                 <div class="col-sm-6 col-md-4 col-lg-4 animated fadeIn">
+                                                     <div class="img-container fx-img-rotate-r" style="border:1px solid #f9f9f9">
+                                                         <img class="img-responsive" src="Imagenes/Image.jpg" alt="imagen-prod-5" id='imagen-producto-5'>
+                                                         <div class="img-options">
+                                                            <div class="img-options-content">
+                                                                <h3 class="font-w400 text-white push-5">Imagen 5</h3>
+                                                                <h4 class="h6 font-w400 text-white-op push-15">PID.00531</h4>
+                                                                <a class="btn btn-sm btn-default img-lightbox" href="#">
+                                                                    <i class="fa fa-search-plus"></i> Ver
+                                                                </a>
+                                                                <div class="btn-group btn-group-sm">
+                                                                    <a class="btn btn-default" href="javascript:void(0)" id="btn-editar-imagen-5"><i class="fa fa-pencil"></i> Editar</a>
+                                                                    <a class="btn btn-default" href="javascript:void(0)"><i class="fa fa-times"></i> Borrar</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                     </div>
+                                                 </div>
+
+                                                 <!-- Input file -> input-imagen-5 -->
+                                                 <input type="file" id="input-imagen-5" accept="image/x-png,image/gif,image/jpeg" class="hidden" name="input-imagen-5">
+
+                                                 <div class="col-sm-6 col-md-4 col-lg-4 animated fadeIn">
+                                                     <div class="img-container fx-img-rotate-r" style="border:1px solid #f9f9f9">
+                                                         <img class="img-responsive" src="Imagenes/Image.jpg" alt="imagen-prod-6" id='imagen-producto-6'>
+                                                         <div class="img-options">
+                                                            <div class="img-options-content">
+                                                                <h3 class="font-w400 text-white push-5">Imagen 6</h3>
+                                                                <h4 class="h6 font-w400 text-white-op push-15">PID.00531</h4>
+                                                                <a class="btn btn-sm btn-default img-lightbox" href="#">
+                                                                    <i class="fa fa-search-plus"></i> Ver
+                                                                </a>
+                                                                <div class="btn-group btn-group-sm">
+                                                                    <a class="btn btn-default" href="javascript:void(0)" id="btn-editar-imagen-6"><i class="fa fa-pencil"></i> Editar</a>
+                                                                    <a class="btn btn-default" href="javascript:void(0)"><i class="fa fa-times"></i> Borrar</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                     </div>
+                                                 </div>
+
+                                                 <!-- Input file -> input-imagen-6 -->
+                                                 <input type="file" id="input-imagen-6" accept="image/x-png,image/gif,image/jpeg" class="hidden" name="input-imagen-6">
+
+
+
+
+                                                <!-- Fin de la galería de fotos del producto -->
+                                                
+
+                                                <div class="col-md-12" style="margin-top: 40px">
+                                                    <div class="form-group">
+                                                            <div class="col-xs-12">
+                                                                <button class="btn btn-sm btn-primary" type="submit" id="registrarProducto">Registrar</button>
+                                                            </div>
+                                                   </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </form>
+
 			                    </div>
                     			<!-- Fin registro de Producto -->
 
+                                <!-- Ventana Modal -->
 
+                                <!-- The Modal -->
+                                <div id="modal-personal" class="modal-personal">
+                                  <!-- The Close Button -->
+                                  <span class="cerrar-modal" id="cerrar-modal">&times;</span>
+
+                                  <!-- Modal Content (The Image) -->
+                                  <img class="modal-personal-contenido" id="modal-personal-contenido">
+
+                                
+                                </div>
 
 
 
@@ -592,6 +727,7 @@
 	 <!-- CKeditor Texto -->
 	<script type="text/javascript" src="assets/js/plugins/ckeditor/ckeditor.js"></script>
     <!-- Fin CkEditor -->
+  
 
     <!-- endinject -->
     <!-- END SCRIPTS and INCLUDES-->

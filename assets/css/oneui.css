@@ -1126,7 +1126,7 @@ textarea.form-control {
 input[type="text"].form-control,
 input[type="password"].form-control,
 input[type="email"].form-control {
-  -webkit-appearance: none;
+ /*  -webkit-appearance: none; */
 }
 .form-control.input-sm {
   border-radius: 3px;

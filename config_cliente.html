@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    
+    <!--Llamo al fragmento de la cabecera -->
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title th:text="${titulo}"></title>
+
+        <!-- Google Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css' />
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/owl.carousel.css" th:href="@{/css/owl.carousel.css}" />
+        <link rel="stylesheet" href="css/cambiosJeff.css" th:href="@{/css/cambiosJeff.css}"/>
+        <link rel="stylesheet" href="css/style.css" th:href="@{/css/style.css}"/>
+        <link rel="stylesheet" href="css/responsive.css" th:href="@{/css/responsive.css}"/>
+        <link rel="stylesheet" href="assets/css/theme-default.css" th:href="@{assets/css/theme-default.css}"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/topbar.css" th:href="@{assets/css/topbar.css}" />
+        <link rel="stylesheet" href="css/dropdown.css"/>
+        <link rel="stylesheet" type="text/css" href="css/jefftabs.css">
+
+
+
+        <!-- OneUI template -->
+        <link rel="stylesheet" id="css-main" href="assets/css/oneui.css">
+        <!-- EndTemplate OneUI -->
+
+    </head>
+    <body>
+
+        <div class="mainmenu-area"> <!-- menú pegajoso -->
+
+                <!-- Menu login -->
+                <div class="header-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="user-menu">
+                                    <ul>
+
+                                        <li><a class="menuC" href="#" sec:authorize="isAuthenticated()"><i class="fa fa-heart"></i> Wishlist</a></li>
+                                        <li><a class="menuC" href="carritoBar.html"><i class="fa fa-cart-arrow-down"></i> Carrito</a></li>
+                                        <li><a class="menuC" href="CheckOut.html"><i class="fa fa-money"></i> Checkout</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="header-right ">
+                                    <ul class="list-unstyled list-inline">
+                                            <!-- MENU CUANDO EL USUARIO SE LOGEA -->
+                                            <li class="hidden dropdown dropdown-small " sec:authorize="isAuthenticated()">
+                                                <a data-toggle="dropdown" data-hover="" class="nombreuser" href="#" style="margin:0"><span>Bienvenido, Diego Angulex </span><span th:text="${#authentication.name}"></span> <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                                <ul style="left:250px; top:32px" class="dropdown-menu">
+                                                    <li><a href="config_cliente.html" class="link1">Configuracion</a></li>
+                                                    <li><a href="#" class="link1">Pedidos Realizados</a></li>
+                                                    <form id="form-cerrar-sesion" th:action="@{/logout}" method="POST">                                                        
+                                                    </form>
+                                                    <li><a href="#" class="link1" onclick="document.getElementById('form-cerrar-sesion').submit()" >Cerrar Sesión</a></li>
+                                                </ul>
+                                            </li> 
+                                            <!-- FIN MENU CUANDO EL USUARIO SE LOGEA -->
+
+                                             <!-- LOG IN DE MENU-->
+                                            <li class="auth--header dropdown auth__nav-item">
+                                              <button data-toggle="dropdown" type="button"
+                                               class="logtitle"><i class="fa fa-sign-in"></i> Log in
+                                              </button>
+                                              <div class="dropdown__menu auth__dropdown--login">
+                                               
+                                                <h5 class="titulod">Iniciar Sesión</h5>
+                                                <form action="#" class="form form--flex">
+                                                  <div class="row">
+                                                    <div class="form-group">
+                                                      <label for="login-username-dropdown" class="txtform">Usuario</label>
+                                                      <input type="text" name="username" id="login-username-dropdown" required data-parsley-trigger="keyup" data-parsley-minlength="6" data-parsley-validation-threshold="5" data-parsley-minlength-message="Login should be at least 6 chars" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <label for="login-password-dropdown" class="txtform">Contraseña</label>
+                                                      <input type="password" name="password" id="login-password-dropdown" required class="form-control">
+                                                    </div>
+                                                  </div>
+                                                     <div class="row">
+                                                      <a href="#" class="olvide">Olvide Contraseña</a>
+                                                       <button type="submit" class="btnis">Iniciar Sesión</button>
+                                                     </div>
+                                                  <div class="gap row form__remember">
+                                                    <input type="checkbox" id="remember-in-dropdown" class="in-checkbox check">
+                                                    <label for="remember-in-dropdown" class="in-label rem">Recuérdame</label>
+                                                  </div>
+                                                  <br/>
+                                                  <div class="row">
+                                                    <span class="txtac">No tienes Cuenta?</span><button type="button" class="btnrg">Registrame</button>
+                                                  </div>
+                                                </form>
+                                              </div>
+                                            </li>
+                                              <!-- FIN LOG IN DE MENU-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Fin menú login -->
+
+                <!-- Menú de navegación --> 
+                <div class="container">
+                    <div class="row">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+
+                            </button>
+                        </div> 
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html"><img src="img/logo_bar.png"/></a></li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+
+                            <li class="active menubar"><a href="index.html" >Inicio</a></li>
+                            <li class="menubar"><a href="tienda.html">Tienda</a></li>
+                            <li class="menubar"><a href="CheckOut.html">Checkout</a></li>                        
+                            <!--<li class="menubar"><a href="#">Contactános</a></li>-->
+                            <li class="menubar"><a href="#" th:href="@{/index/}">Test</a></li>
+                            <li class="menubar"><a href="dashboard_main.html">Dashboard</a></li></li><!-- Acceso autorizado -->     
+
+
+                        </ul>
+                        <ul class="nav navbar-nav pull-right" style="margin-top: 19px">
+                            <li class="carrito"><a href="carritoBar.html">Carrito - <span class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a></li>
+                        </ul>
+
+                    </div>  
+
+                </div>
+        </div>
+        
+ <!-- BEGIN CENTER SECTION-->
+ <!-- carrito global -->
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Configuracion de Cliente</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Page title area -->
+    
+
+
+                      <!-- END SIDEBAR-->
+
+                      <!-- DASHBOARD BLOQUE-->
+                      <div class="cen1 container">
+                          <div class="widget js-widget widget--dashboard">
+
+ 
+
+                                <!-- bloque usuario -->
+                                <div class="block">
+                                    <!-- cabecera -->
+                                    <div class="bg-image" style="background-image: url('img/photo28@2x.jpg');">
+                                        <div class="block-content bg-primary-op text-center overflow-hidden">
+                                            <div class="push-30-t push animated fadeInDown">
+                                                <img class="img-avatar img-avatar96 img-avatar-thumb" src="img/Luke-Henriques-Gomes-96x96.png" height="96" width="96" alt="">
+                                            </div>
+                                            <div class="push-30 animated fadeInUp">
+                                                <h2 class="h4 font-w600 text-white push-5">RAMOS</h2>
+                                                <h3 class="h5 text-white-op">Jeronimo</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- fin de cabecera -->
+
+                                    <!-- debajo cabecera-->
+                                    <div class="block-content text-center">
+                                        <div class="row items-push text-uppercase">
+                                            <div class="col-xs-6 col-sm-6">
+                                                <div class="font-w700 text-gray-darker animated fadeIn">Compras (Articulos)</div>
+                                                <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">20</a>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6">
+                                                <div class="font-w700 text-gray-darker animated fadeIn">Cantidad de Compras (s/.)</div>
+                                                <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">s/. 160</a>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                <!-- fin debajo cabecera -->
+
+                             
+                                <form method="post">
+                                    <div class="block">
+
+                                          <input class="radiop" id="tab1" type="radio" name="tabs" checked/>
+                                          <label class="headp" for="tab1">Editar Datos Personales</label>
+                                                
+                                          <input class="radiop" id="tab2" type="radio" name="tabs"/>
+                                          <label class="headp" for="tab2">Editar Contraseña</label>
+
+                                          <input class="radiop" id="tab3" type="radio" name="tabs"/>
+                                          <label class="headp" for="tab3">Tarjetas de Credito</label>
+
+                                          <input class="radiop" id="tab4" type="radio" name="tabs"/>
+                                          <label class="headp" for="tab4">Direcciones</label>
+
+                                            <section class="sectorp" id="content1">
+                                                <div class="col-md-12 form-horizontal">
+                                                        <div class="form-group">
+                                                            <div class="col-xs-6">
+                                                                <label>Usuario: <h2 style="color:#1abc9c;">Admin003</h2></label>
+                                                           
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-xs-6">
+                                                                <label for="">Dni</label>
+                                                                <input class="form-control input-lg" type="text" id="perfil-dni" name="perfil-dni" placeholder="Ingrese su Dni.." value="56176231">
+                                                            </div>
+                                                            <div class="col-xs-6">
+                                                                <label for="">Nombre</label>
+                                                                <input class="form-control input-lg" type="text" id="perfil-nombre" name="perfil-nombre" placeholder="Ingrese su Nombre.." value="Jeronimo">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-xs-6">
+                                                                <label for="">Apellido Paterno</label>
+                                                                <input class="form-control input-lg" type="text" id="perfil-ape_pate" name="perfil-ape_pate" placeholder="Ingrese su Apellido Paterno.." value="Ramos">
+                                                            </div>
+                                                            <div class="col-xs-6">
+                                                                <label for="">Apellido Materno</label>
+                                                                <input class="form-control input-lg" type="text" id="perfil-ape_mate" name="perfil-ape_mate" placeholder="Ingrese su Apellido Materno.." value="Rodriguez">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-xs-12">
+                                                                <label for="">Email</label>
+                                                                <input class="form-control input-lg" type="email" id="perfil-email" name="perfil-email" placeholder="Ingrese su Correo.." value="fuep@serap.com">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-xs-12">
+                                                                <label for="">  Direccion</label>
+                                                                <input class="form-control input-lg" type="email" id="perfil-direccion" name="perfil-direccion" placeholder="Ingrese su Direccion.." value="calle los manzanos 123">
+                                                            </div>
+                                                        </div>
+                                                        <label for=""> Seleccione</label>
+
+                                                        <div class="form-group">
+
+                                                            <div class="col-xs-4">
+                                                                <select>
+                                                                    <option>Provincia</option>
+                                                                    <option>P1</option>
+                                                                    <option>P1</option>
+                                                                  </select>
+                                                            </div>
+                                                            <div class="col-xs-4">
+                                                                <select>
+                                                                    <option>Departamento</option>
+                                                                    <option>D1</option>
+                                                                    <option>D2</option>
+                                                                  </select>
+                                                            </div>
+                                                            <div class="col-xs-4">
+                                                                <select>
+                                                                    <option>Distrito</option>
+                                                                    <option>D1</option>
+                                                                    <option>D2</option>
+                                                                  </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <br/><br/>
+                                                          <div class="text-center">
+                                                             <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-check push-5-r"></i> Guardar Cambios</button>
+                                                     
+                                                         </div>
+                                                </div>    
+                                            </section>
+
+                                            <section class="sectorp" id="content2"> 
+                                                     
+                                                  <div class="form-group col-md-12 col-xs-12" >
+                                                      <div class="centrandot col-xs-12">
+                                                         <label for="profile-password">Contraseña Actual</label>
+                                                            <input class="centrando form-control input-lg" type="password" id="profile-password" name="profile-password">
+                                                           
+                                                                
+                                                                  <hr style="max-width:300px;">
+                                                            </div>
+                                                    
+                                                       
+                                                        
+                                                            <div class="centrandot col-xs-12">
+                                                             <label for="profile-password-new">Nueva Contraseña</label>
+                                                             <input class="centrando form-control input-lg" type="password" id="profile-password-new" name="profile-password-new">
+                                                            
+                                                      
+                                            
+                                                             <label for="profile-password-new-confirm">Confirme Contraseña</label>
+                                                             <input class="centrando form-control input-lg" type="password" id="profile-password-new-confirm" name="profile-password-new-confirm">
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        <div class="form-group col-md-12 col-xs-12 text-center" >
+
+                                                             <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-check push-5-r"></i> Guardar Cambios</button>
+                                                            
+                                                   </div>
+                                               
+
+                                                  
+                                            </section>
+                                     <section class="sectorp" id="content3">                             
+                                        <div class="col-lg-12">
+                                            <!-- Hover Table -->
+                                            <div class="block">
+                                                                 
+                                                                <div class="block-header">
+                                                                    <div class="block-options">
+                                                                       <button class="widget__btn js-widget-btn widget__btn--action pull-right" id="registra-categoria" type="button" data-toggle="modal" data-target="#modal-registrarTarjetaCredito"  title="Registrar una nueva Categoría"><i class="fa fa-plus push-5-r"></i>Nueva Tarjeta de Credito</button> 
+                                                                    </div>
+                                                                    <h3 class="block-title">Tarjetas de Credito Guardadas</h3>
+                                                                </div>
+
+
+                                                                <!-- Modal Registrar Direccion-->
+                                                                    <div  class="modal fade" id="modal-registrarTarjetaCredito" tabindex="-1" role="dialog" aria-hidden="true">
+                                                                        <div class="modal-dialog modal-dialog-fromright"  style="width: 450px; height: 800px; margin-top:200px">
+                                                                            <div class="modal-content" >  
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <!-- Bootstrap Editar -->
+                                                                                        <div class="block block-themed" style="background-color: #f6f6f6;margin-bottom: 0px">
+                                                                                            <div class="block-header bg-success" style="background-color: #1abc9c">                                    
+                                                                                                <h3 class="block-title pull-left" style="padding-top:5px">Registrar nueva Tarjeta de Credito</h3><span class="close" id="cerraModalCategoria" data-dismiss="modal">&times;</span>
+                                                                                            </div>
+                                                                                            
+                                             <div class="full-card">
+
+                                                <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label for="">Nombre Titular de Tarjeta <abbr title="required" class="required">*</abbr> </label>
+                                                    
+                                                    <input type="text" value="" placeholder="Nombre Titular de Tarjeta" id="" name="" class="card-boxes">
+                                                    </div>
+                                                </div>
+                                            
+                                               <div class="form-group">
+                                                    <label class="card-titulos" for="">Numero de Tarjeta <abbr title="required" class="required">*</abbr></label>
+                                                        <div class="col-md-12">
+                                                            <input type="text" value="" placeholder="0123" name="account_password" class="card-new">
+                                                            <input type="text" value="" placeholder="4567" name="account_password" class="card-new">
+                                                            <input type="text" value="" placeholder="8910" name="account_password" class="card-new">
+                                                            <input type="text" value="" placeholder="1112" name="account_password" class="card-new">
+                                                        </div>
+                                                    
+                                                <div class="clear"></div>  
+                                               </div>
+                                                    <div id="" class="">
+                                                        <label class="card-titulos" for="">Fecha de Expiracion <abbr title="required" class="required">*</abbr>
+                                                        </label>
+                                                        <div class="form-group">
+                                                        <div class="col-md-12">
+                                                        <select class="card-mes" id="" name="">
+                                                            <option value="">Seleccione Mes…</option>
+                                                            <option value="1">Enero</option>
+                                                            <option value="2">Fecbrero</option>
+                                                            <option value="3">Marzo</option>
+                                                        </select>
+                                                        <select class="card-ano" id="" name="">
+                                                            <option value="">Seleccione Ano…</option>
+                                                            <option value="1">2019</option>
+                                                            <option value="2">2020</option>
+                                                            <option value="3">2021</option>
+                                                        </select>
+                                                        </div>
+                                                        </div>
+                                                        <div class="ccv">
+
+                                                        <label style="color:#606e7c;" class="card-titulos" for="">Card CCV <abbr title="required" class="required">*</abbr></label>
+                                                        
+                                                        <input type="text" value="" placeholder="Card CCV" id="" name="" class="card-ccv">
+
+                                                        <div class="text-center card-btn">
+                                                             <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-check push-5-r"></i> Guardar Cambios</button>
+                                                     
+                                                         </div>
+                                                        
+
+                                                        </div>
+                                                    </div> 
+                                            </div>
+                                                                                            
+                                                                                        </div>
+                                                                                     <!-- END Bootstrap Editar -->
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <!-- fin Modal -->
+
+                                          <!-- Modal Registrar Direccion-->
+                                                                    <div  class="modal fade" id="modal-EditarTarjetaCredito" tabindex="-1" role="dialog" aria-hidden="true">
+                                                                        <div class="modal-dialog modal-dialog-fromright"  style="width: 450px; height: 800px; margin-top:200px">
+                                                                            <div class="modal-content" >  
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <!-- Bootstrap Editar -->
+                                                                                        <div class="block block-themed" style="background-color: #f6f6f6;margin-bottom: 0px">
+                                                                                            <div class="block-header bg-success" style="background-color: #1abc9c">                                    
+                                                                                                <h3 class="block-title pull-left" style="padding-top:5px">Registrar nueva Tarjeta de Credito</h3><span class="close" id="cerraModalCategoria" data-dismiss="modal">&times;</span>
+                                                                                            </div>
+                                                                                            
+                                                                                         <div class="full-card">
+
+                                                                                            <div class="form-group">
+                                                                                            <div class="col-md-12">
+                                                                                                <label for="">Nombre Titular de Tarjeta <abbr title="required" class="required">*</abbr> </label>
+                                                                                                
+                                                                                                <input type="text" value="" placeholder="Nombre Titular de Tarjeta" id="" name="" class="card-boxes">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        
+                                                                                           <div class="form-group">
+                                                                                                <label class="card-titulos" for="">Numero de Tarjeta <abbr title="required" class="required">*</abbr></label>
+                                                                                                    <div class="col-md-12">
+                                                                                                        <input type="text" value="" placeholder="0123" name="account_password" class="card-new">
+                                                                                                        <input type="text" value="" placeholder="4567" name="account_password" class="card-new">
+                                                                                                        <input type="text" value="" placeholder="8910" name="account_password" class="card-new">
+                                                                                                        <input type="text" value="" placeholder="1112" name="account_password" class="card-new">
+                                                                                                    </div>
+                                                                                                
+                                                                                            <div class="clear"></div>  
+                                                                                           </div>
+                                                                                                <div id="" class="">
+                                                                                                    <label class="card-titulos" for="">Fecha de Expiracion <abbr title="required" class="required">*</abbr>
+                                                                                                    </label>
+                                                                                                    <div class="form-group">
+                                                                                                    <div class="col-md-12">
+                                                                                                    <select class="card-mes" id="" name="">
+                                                                                                        <option value="">Seleccione Mes…</option>
+                                                                                                        <option value="1">Enero</option>
+                                                                                                        <option value="2">Fecbrero</option>
+                                                                                                        <option value="3">Marzo</option>
+                                                                                                    </select>
+                                                                                                    <select class="card-ano" id="" name="">
+                                                                                                        <option value="">Seleccione Ano…</option>
+                                                                                                        <option value="1">2019</option>
+                                                                                                        <option value="2">2020</option>
+                                                                                                        <option value="3">2021</option>
+                                                                                                    </select>
+                                                                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="ccv">
+
+                                                                                                    <label style="color:#606e7c;" class="card-titulos" for="">Card CCV <abbr title="required" class="required">*</abbr></label>
+                                                                                                    
+                                                                                                    <input type="text" value="" placeholder="Card CCV" id="" name="" class="card-ccv">
+
+                                                                                                    <div class="text-center card-btn">
+                                                                                                         <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-check push-5-r"></i> Guardar Cambios</button>
+                                                                                                 
+                                                                                                     </div>
+                                                                                                    
+
+                                                                                                    </div>
+                                                                                                </div> 
+                                                                                        </div>
+                                                                                                                                        
+                                                                                                                                    </div>
+                                                                                                                                 <!-- END Bootstrap Editar -->
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                
+                                                                    <!-- fin Modal -->
+
+
+                                                <div class="block-content">
+                                                    <table class="table table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center" style="width:25%;">Nombre de Tarjeta</th>
+                                                                <th class="text-center">Tipo</th>
+                                                                <th class="text-center hidden-xs" style="width: 35%;">Numero</th>
+                                                                <th class="text-center hidden-xs" style="width: 15%;">Expiracion</th>
+                                                                <th class="text-center" style="width: 100px;">Accion</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="text-center">Daniel Flores</td>
+                                                                <td class="text-center">Visa</td>
+                                                                <td class="text-center">XXXX-XXXXXX-1111</td>
+                                                                <td class="text-center">07/2020</td>                                                
+                                                                <td class="text-center">
+                                                                    <div class="btn-group">
+                                                                        <a class="btn btn-xs btn-default edita-categoria" type="button" data-toggle="modal" data-target="#modal-EditarTarjetaCredito" title="Editar Categoria"><i class="fa fa-pencil"></i></a> 
+                                                                        <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remove Client"><i class="fa fa-times"></i></button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">Daniel Flores</td>
+                                                                <td class="text-center">Visa</td>
+                                                                <td class="text-center">XXXX-XXXXXX-2222</td>
+                                                                <td class="text-center">05/2021</td> 
+                                                                <td class="text-center">
+                                                                    <div class="btn-group">
+                                                                        <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="fa fa-pencil"></i></button>
+                                                                        <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remove Client"><i class="fa fa-times"></i></button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            
+                                                            
+                                                           
+                                                          
+                                                            
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <!-- END Hover Table -->
+                                        </div>                           
+                                     </section>
+
+                                     <section class="sectorp" id="content4"> 
+                                        <div class="col-lg-12">
+                                        <!-- Hover Table -->
+                                                <div class="block">
+                                                <!-- Hover Table -->
+                                                     
+                                                            <div class="block-header">
+                                                                <div class="block-options">
+                                                                   <button class="widget__btn js-widget-btn widget__btn--action pull-right" id="registra-categoria" type="button" data-toggle="modal" data-target="#modal-registrarDirecciones"  title="Registrar una nueva Categoría"><i class="fa fa-plus push-5-r"></i>Nueva Direccion</button> 
+                                                                </div>
+                                                                <h3 class="block-title">DIRECCIONES GUARDADAS</h3>
+                                                            </div>
+                                                            
+                                                            <!-- Modal Registrar Direccion-->
+                                                                    <div  class="modal fade" id="modal-registrarDirecciones" tabindex="-1" role="dialog" aria-hidden="true">
+                                                                        <div class="modal-dialog modal-dialog-fromright"  style="width: 400px; height: 800px; margin-top:200px">
+                                                                            <div class="modal-content" >  
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <!-- Bootstrap Editar -->
+                                                                                        <div class="block block-themed" style="background-color: #f6f6f6;margin-bottom: 0px">
+                                                                                            <div class="block-header bg-success" style="background-color: #1abc9c">                                    
+                                                                                                <h3 class="block-title pull-left" style="padding-top:5px">Registrar Direccion</h3><span class="close" id="cerraModalCategoria" data-dismiss="modal">&times;</span>
+                                                                                            </div>
+                                                                                            
+                                                                                                <form class="" action="" method="post">                                                                                        
+                                                                                                    <div class="form-group">
+                                                                                                   
+                                                                                                         <h3 style="width: 300px; font-size:13px; padding:7px 0px 7px 17px; text-transform: capitalize;" class="">Dirección</h3>
+                                                                                                        <div class="col-xs-12">
+                                                                                                            <input class="form-control" type="text"  name="" placeholder="Escriba direccion...">
+                                                                                                        </div>
+                                                                                                
+                                                                                                     </div>
+                                                                                                   
+                                                                                                    <div class="form-group">
+                                                                                                       <div class="col-md-12">
+                                                                                                        <h3 style="width: 300px; font-size:13px; padding:7px 0px 7px; text-transform: capitalize;" class="">Departamento</h3>
+                                                                                                            <select style="width: 370px; margin-left:0px;" class="fecha-mes" id="" name="">
+                                                                                                                <option value="">Seleccione Departamento…</option>
+                                                                                                                <option value="1">dep 1</option>
+                                                                                                                <option value="2">dep 2</option>
+                                                                                                                <option value="3">dep 3</option>
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                        <br/><br/><br/>
+
+                                                                                                        <div class="col-md-12">
+                                                                                                            <h3 style="font-size:13px; padding:7px 0px 7px; text-transform: capitalize;" class="block-title pull-left">Provincia</h3>
+                                                                                                        <select style="width: 370px; margin-left:-1px;" class="fecha-mes" id="" name="">
+                                                                                                            <option value="">Seleccione Provincia…</option>
+                                                                                                            <option value="1">prov 1</option>
+                                                                                                            <option value="2">prov 2</option>
+                                                                                                            <option value="3">prov 3</option>
+                                                                                                        </select>
+                                                                                                        </div>
+                                                                                                        <br/><br/><br/>
+                                                                                                     
+                                                                                                       <div class="col-md-12">
+                                                                                                            <h3 style="font-size:13px; padding:7px 0px 7px; text-transform: capitalize;" class="block-title pull-left">Distrito</h3>
+                                                                                                            <select style="width: 370px; margin-left:-1px;" class="fecha-mes" id="" name="">
+                                                                                                                <option value="">Seleccione Distrito…</option>
+                                                                                                                <option value="1">dis 1</option>
+                                                                                                                <option value="2">dis 2</option>
+                                                                                                                <option value="3">dis 3</option>
+                                                                                                            </select>
+                                                                                                        </div>                                                  
+                                                                                                    </div>
+                                                                                                    
+
+                                                                                                    <br/><br/><br/><br/>
+                                                                                                  
+                                                                                                    <div class="form-group">
+                                                                                                        <div class="col-xs-12">
+                                                                                                            <button class="btn btn-sm btn-success" type="submit" id="btnRegistrarCategoria"><i class="fa fa-check push-5-r"></i> Guardar cambios</button>
+                                                                                                        </div>                                                       
+                                                                                                    </div>
+                                                                                                    <br/>
+                                                                                                    <br/>
+                                                                                                </form>
+                                                                                            
+                                                                                        </div>
+                                                                                     <!-- END Bootstrap Editar -->
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <!-- fin Modal -->
+
+                                                                    <!-- Modal Editar Direccion-->
+                                                                    <div  class="modal fade" id="modal-EditarDirecciones" tabindex="-1" role="dialog" aria-hidden="true">
+                                                                        <div class="modal-dialog modal-dialog-fromright"  style="width: 400px; height: 800px; margin-top:200px">
+                                                                            <div class="modal-content" >  
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <!-- Bootstrap Editar -->
+                                                                                        <div class="block block-themed" style="background-color: #f6f6f6;margin-bottom: 0px">
+                                                                                            <div class="block-header bg-success" style="background-color: #1abc9c">                                    
+                                                                                                <h3 class="block-title pull-left" style="padding-top:5px">Editar Direccion</h3><span class="close" id="cerraModalCategoria" data-dismiss="modal">&times;</span>
+                                                                                            </div>
+                                                                                            
+                                                                                                <form class="" action="" method="post">                                                                                        
+                                                                                                    <div class="form-group">
+                                                                                                   
+                                                                                                         <h3 style="width: 300px; font-size:13px; padding:7px 0px 7px 17px; text-transform: capitalize;" class="">Dirección</h3>
+                                                                                                        <div class="col-xs-12">
+                                                                                                            <input class="form-control" type="text"  name="" placeholder="Escriba direccion...">
+                                                                                                        </div>
+                                                                                                
+                                                                                                     </div>
+                                                                                                   
+                                                                                                    <div class="form-group">
+                                                                                                       <div class="col-md-12">
+                                                                                                        <h3 style="width: 300px; font-size:13px; padding:7px 0px 7px; text-transform: capitalize;" class="">Departamento</h3>
+                                                                                                            <select style="width: 370px; margin-left:0px;" class="fecha-mes" id="" name="">
+                                                                                                                <option value="">Seleccione Departamento…</option>
+                                                                                                                <option value="1">dep 1</option>
+                                                                                                                <option value="2">dep 2</option>
+                                                                                                                <option value="3">dep 3</option>
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                        <br/><br/><br/>
+
+                                                                                                        <div class="col-md-12">
+                                                                                                            <h3 style="font-size:13px; padding:7px 0px 7px; text-transform: capitalize;" class="block-title pull-left">Provincia</h3>
+                                                                                                        <select style="width: 370px; margin-left:-1px;" class="fecha-mes" id="" name="">
+                                                                                                            <option value="">Seleccione Provincia…</option>
+                                                                                                            <option value="1">prov 1</option>
+                                                                                                            <option value="2">prov 2</option>
+                                                                                                            <option value="3">prov 3</option>
+                                                                                                        </select>
+                                                                                                        </div>
+                                                                                                        <br/><br/><br/>
+                                                                                                     
+                                                                                                       <div class="col-md-12">
+                                                                                                            <h3 style="font-size:13px; padding:7px 0px 7px; text-transform: capitalize;" class="block-title pull-left">Distrito</h3>
+                                                                                                            <select style="width: 370px; margin-left:-1px;" class="fecha-mes" id="" name="">
+                                                                                                                <option value="">Seleccione Distrito…</option>
+                                                                                                                <option value="1">dis 1</option>
+                                                                                                                <option value="2">dis 2</option>
+                                                                                                                <option value="3">dis 3</option>
+                                                                                                            </select>
+                                                                                                        </div>                                                  
+                                                                                                    </div>
+                                                                                                    
+
+                                                                                                    <br/><br/><br/><br/>
+                                                                                                  
+                                                                                                    <div class="form-group">
+                                                                                                        <div class="col-xs-12">
+                                                                                                            <button class="btn btn-sm btn-success" type="submit" id="btnRegistrarCategoria"><i class="fa fa-check push-5-r"></i> Guardar cambios</button>
+                                                                                                        </div>                                                       
+                                                                                                    </div>
+                                                                                                    <br/>
+                                                                                                    <br/>
+                                                                                                </form>
+                                                                                            
+                                                                                        </div>
+                                                                                     <!-- END Bootstrap Editar -->
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <!-- fin Modal -->
+                                                          
+
+                                                     <div class="block-content">
+                                                        <table class="table table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="text-center" style="width:40%;">Direccion</th>
+                                                                    <th class="text-center" style="width: 15%;">Departamento</th>
+                                                                    <th class="text-center hidden-xs" style="width: 15%;">Provincia</th>
+                                                                    <th class="text-center hidden-xs" style="width: 15%;">Distrito</th>
+                                                                    <th class="text-center" style="width: 12%;">Accion</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="text-center">Calle los Manzanos 123</td>
+                                                                    <td class="text-center">Lima</td>
+                                                                    <td class="text-center">Lima</td>
+                                                                    <td class="text-center">Los Olivos</td>                                                
+                                                                    <td class="text-center">
+                                                                        <div class="btn-group">
+                                                                            <a class="btn btn-xs btn-default edita-categoria" type="button" data-toggle="modal" data-target="#modal-EditarDirecciones" title="Editar Categoria"><i class="fa fa-pencil"></i></a> 
+                                                                            <button href="#modal-EditarDirecciones" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remove Client"><i class="fa fa-times"></i></button>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center">Calle los naranjos 145</td>
+                                                                    <td class="text-center">Lima</td>
+                                                                    <td class="text-center">Lima</td>
+                                                                    <td class="text-center">San Isidro</td>                                                
+                                                                    <td class="text-center">
+                                                                        <div class="btn-group">
+                                                                            <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="fa fa-pencil"></i></button>
+                                                                            <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remove Client"><i class="fa fa-times"></i></button>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                <!-- END Hover Table -->                
+                                     </section>
+                                    </div>
+                                <!-- fin de bloque usuario -->
+                                </form> 
+                                <!-- fin tabs -->
+                               </div>
+                        </div>
+                      </div>
+                      <!-- FIN BLOQUE DASHBOARD-->
+
+        
+        <div th:fragment="footer-version1">
+
+            <div class="footer-top-area">
+                <div class="zigzag-bottom"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="footer-about-us">
+                                <h2><img src="img/logo_bar.png" /></h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt id doloribus vero quam laborum quas alias dolores blanditiis iusto consequatur, modi aliquid eveniet eligendi iure eaque ipsam iste, pariatur omnis sint! Suscipit, debitis, quisquam. Laborum commodi veritatis magni at? um quas alias dolores blanditiis iusto consequatur, modi aliquid eveniet eligendi iure eaque ipsam iste, pariatur omnis sint! Suscipit, debitis, quisquam. Laborum commodi veritatis magni at?</p>
+                                <div class="footer-social">
+                                    <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                                    <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-6 col-sm-6">
+                            <div class="footer-newsletter">
+                                <h2 class="footer-wid-title">Boletines de Suscripción</h2>
+                                <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
+                                <div class="newsletter-form">
+                                    <form action="#">
+                                        <input type="email" placeholder="Ingrese su Correo"  />
+                                        <input type="submit" value="Subscríbeme"  />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End footer top area --><!-- parte:8 -->
+
+            <div class="footer-bottom-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="copyright">
+                                <p>&copy; 2017 Tech's Bar | Todos Los Derechos Reservado a <a href="!#" target="_blank">Tech's Bar = Bustamante, Angulo, Ramirez</a></p>                        
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="footer-card-icon">
+                                <i class="fa fa-cc-discover"></i>
+                                <i class="fa fa-cc-mastercard"></i>
+                                <i class="fa fa-cc-paypal"></i>
+                                <i class="fa fa-cc-visa"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+        </div>
+
+        <!--  Fragmento de scripts -->
+        <div th:fragment="bloque-scripts-1">
+            <!-- Latest jQuery form server -->
+            <script src="https://code.jquery.com/jquery.min.js"></script>
+
+            <!-- Bootstrap JS form CDN -->
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+            <!-- jQuery sticky menu -->
+            <script src="js/owl.carousel.min.js"></script>
+            <script src="js/jquery.sticky.js"></script>
+
+            <!-- jQuery easing -->
+            <script src="js/jquery.easing.1.3.min.js"></script>
+
+            <!-- Main Script -->
+            <script src="js/main.js"></script>
+            <script src="js/pegajosoJS.js"></script>
+        </div>
+        
+            <!-- jQuery sticky menu -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+
+    
+    <!-- jQuery easing -->
+    <script src="js/jquery.easing.1.3.min.js"></script>
+    
+    <!-- Main Script -->
+    <script src="js/main.js"></script>
+
+    <!-- sweet alert 2 -->
+    <script src="assets/js/plugins/sweetalert2/sweetalert2.min.js"></script>
+
+    <!-- BEGIN SCRIPTS and INCLUDES TEMPLATE REALTY SPACE v2.22-->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=places,drawing,geometry"></script>
+    <script type="text/javascript" src="http://cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
+    <!--
+    Contains vendor libraries (Bootstrap3, Jquery, Chosen, etc) already compiled into a single file, with
+    versions that are verified to work with our theme. Normally, you should not edit that file.
+    -->
+    <!-- build:jsvendor-->
+    <script type="text/javascript" src="assets/js/vendor.min.js"></script>
+    <!-- endbuild-->
+    <!--
+    This file is used for demonstration purposes and contains example property items, that are mostly used to
+    render markers on the map. You can safely delete this file, after you've adapted the demo.js code
+    to use your own data.
+    -->
+    <!-- build:jsdemodata-->
+    <script type="text/javascript" src="assets/js/demodata.min.js"></script>
+    <!-- endbuild-->
+    <!--
+    The library code that Realtyspace theme relies on, in order to function properly.
+    Normally, you should not edit this file or add your own code there.
+    -->
+    <!-- build:jsapp-->
+    <script type="text/javascript" src="assets/js/app.min.js"></script>
+    <!-- endbuild-->
+    <!--
+    the main file, that you should modify. It contains lots of examples of
+    plugin usage, with detailed comments about specific sections of the code.
+    -->
+    <!-- build:jsdemo-->
+    <script type="text/javascript" src="assets/js/demo.min.js"></script>
+    <!-- endbuild--><!-- inject:ga  -->
+    <!-- endinject -->
+
+    <!-- Script tablas -->
+    <script src="assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
+    
+    <!-- iniciando tablas -->  
+    <script src="assets/js/pages/base_tables_datatables.js"></script>
+
+
+    <!-- Scripts personales -->
+    <script type="text/javascript" src="js/scripts-personales/dashboard_categorias.js"></script>
+    
+    
+
+        
+
+
+    </body>
+</html>

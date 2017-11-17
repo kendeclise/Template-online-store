@@ -15588,8 +15588,8 @@ div.wpcf7 img.ajax-loader {
   -webkit-transform: translate3d(0, -3px, 0);
   transform: translate3d(0, -3px, 0);
   position: absolute;
-  top: 30px;
-  left: 0;
+  top: 35px; /* cambio para calzar en menu */
+  left: 10;
   padding: 0;
   border: 1px solid #dcdcdc;
 }

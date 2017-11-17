@@ -77,6 +77,15 @@
   /* fix for flashing background */
   -webkit-transform: translate3d(0px, 0px, 0px);
 }
+/* cambio de boton prev y next */
+.olw-nav, .owl-prev{
+  margin: 0 0px  0 0;
+}
+
+.olw-nav, .owl-next{
+  margin: 0px 0px 0px 0px;
+}
+/* fin de cambios */
 .owl-carousel .owl-controls .owl-nav .owl-prev,
 .owl-carousel .owl-controls .owl-nav .owl-next,
 .owl-carousel .owl-controls .owl-dot {
@@ -87,6 +96,8 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+    
 }
 .owl-carousel.owl-loaded {
   display: block;

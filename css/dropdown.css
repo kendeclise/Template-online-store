@@ -1,0 +1,101 @@
+.olvide{
+	background: none;
+	border:none;
+	margin: 0px auto;
+	float:right;
+	color:#000 !important;
+	text-transform: capitalize !important;
+}
+
+.txtform{
+	text-transform: capitalize !important;
+	font-weight:500;
+}
+
+.olvide:hover{
+	color:#1abc9c !important;
+	text-decoration: none !important;
+}
+
+.btnin{
+	text-align: center;
+	margin:0px auto;
+}
+
+.checkin{
+	padding-top: 20px;
+	text-align: center;
+	margin:0px auto;
+}
+
+.rem{
+
+	border:none;
+	margin: 0px auto;
+	color:#000 !important;
+	text-transform: capitalize !important;
+	padding-top: 7px !important;
+}
+
+.logtitle{
+	background: none !important;
+	border:none;
+	float:right !important;
+	color:#fff;
+	font-family: "Titillium Web", sans-serif;
+	margin-top: 8px;
+	font-size: 13px !important;
+	font-weight: 700;
+}
+
+.logtitle:hover{
+	color:#323232 !important;
+}
+
+.titulod{
+	text-align: center;
+	padding-bottom: 20px !important;
+	font-size: 16px;
+}
+
+.logtitle:focus {
+outline: 0;
+box-shadow: none;
+}
+
+.btnis{
+	background:#1abc9c !important;
+	margin:auto !important;
+	text-align: center !important;
+}
+
+.btnis:hover{
+	background:#323232 !important;
+	color:#fff;
+}
+
+.gap{
+	padding-top: 10px;
+}
+
+.btnrg{
+	background:#1abc9c !important;
+	margin:auto !important;
+	text-align: center !important;
+	color: #fff !important;
+	border: none !important;
+	font-size: 15px !important;
+	padding:6px 15px;
+}
+
+.btnrg:hover{
+	background:#323232 !important;
+	color:#fff;
+
+}
+
+.txtac{
+	padding-top: 5px;
+	text-transform: capitalize !important;
+}
+	

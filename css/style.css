@@ -15,7 +15,7 @@
 a:focus { outline: 0px solid }
 img {
     max-width: 100%;
-    height: auto;
+    height: 93%;
 }
 .fix { overflow: hidden }
 h1,
@@ -25,17 +25,18 @@ h4,
 h5,
 h6 {
     font-weight: 700;
-    margin: 0 0 15px;
+    margin: 0 0 0px;
 }
 body { font-family: 'Titillium Web', sans-serif; }
 
 
-
+/* top bar modificado #f4f4f4 / 1abc9c */
 .header-area {
-    background: none repeat scroll 0 0 #f4f4f4;
+    background: none repeat scroll 0 0 #1abc9c;
 }
+/* texto top bar */
 .header-area a {
-    color: #888;
+    color: #fff;
 }
 .user-menu ul {
     list-style: outside none none;
@@ -74,13 +75,17 @@ body { font-family: 'Titillium Web', sans-serif; }
     text-align: center;
 }
 
-.mainmenu-area {background: none repeat scroll 0 0 #1abc9c;
+/* menu bar gral */
+.mainmenu-area {background: none repeat scroll 0 0 rgba(30, 30, 38, 0.86);
 font-family: "Roboto Condensed",sans-serif;
 text-transform: uppercase;
 width: 100%;
 z-index: 999;}
-
-
+/* 
+nombre de log in
+.nom:hover{
+  color:#ccc;
+} */
 
 .logo h1 {
     font-size: 40px;
@@ -156,7 +161,7 @@ z-index: 999;}
 .slider-area, .promo-area, .brands-area, .maincontent-area, .footer-top-area, .product-widget-area, .product-breadcroumb-area, .single-product-area {position: relative;overflow: hidden}
 .zigzag-bottom {}
 .slide-text-wrapper {
-  height: 700px;
+  height: 600px;
 }
 .slide-text-wrapper {
   display: table;width: 100%;
@@ -169,6 +174,7 @@ background: none repeat scroll 0 0 #1abc9c;
 bottom: -80px;
 height: 165px;
 left: -5%;
+
 position: absolute;
 transform: rotate(3deg);
 width: 108%;
@@ -192,13 +198,14 @@ z-index: 9;
   top: 0;
   width: 100%;
 }
-.slide-one {background-image: url(img/slide-1.jpg)}
+.slide-one {background-image: url(img/laptop)}
 .slide-two {background-image: url(img/slide-2.jpg)}
 .slide-three {background-image: url(img/slide-3.jpg)}
 .slide-text {color: #fff;font-size: 18px;font-weight: 200}
 .slide-text h2 {
   font-size: 45px;font-weight: 200
 }
+
 
 .slide-content {position: relative;z-index: 9;padding: 30px}
 .slide-content:before {
@@ -228,17 +235,17 @@ z-index: 9;
 
 .readmore:hover {background: #222;text-decoration: none;color: #fff;border: 1px solid #fff}
 
-
+/* cambio 2 */
 .promo-area {
   background: none repeat scroll 0 0 #1abc9c;
   color: #fff;
-  padding: 77px 0 200px;
+  padding: 0px 0 200px;
 }
 
 .brands-area {
   background: none repeat scroll 0 0 #1abc9c;
   color: #fff;
-  padding: 0px 0 200px;
+  padding: 0px 0 50px;
 }
 
 .promo-area .zigzag-bottom, .brands-area .zigzag-bottom{background: #fff}
@@ -259,7 +266,7 @@ z-index: 9;
   font-family: "Raleway",sans-serif;
   font-size: 50px;
   font-weight: 100;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
@@ -334,8 +341,8 @@ z-index: 9;
   overflow: hidden;
 }
 .single-product:hover {}
-.single-product:hover .product-hover a.add-to-cart-link {top: 32%;}
-.single-product:hover .product-hover a.view-details-link {bottom: 32%;}
+.single-product:hover .product-hover a.add-to-cart-link {top: 27%;}
+.single-product:hover .product-hover a.view-details-link {bottom: 27%;}
 .single-product:hover .product-hover:after{left: 0}
 
 
@@ -356,7 +363,7 @@ z-index: 9;
   padding: 1px 10px;
 }
 .latest-product .owl-nav div:hover, .brand-wrapper .owl-nav div:hover, .related-products-wrapper .owl-nav div:hover {color: #222;border-color: #222}
-.brand-list {padding-top: 40px;}
+.brand-list {padding-top: 0px;}
 .brand-list .owl-nav {
   position: absolute;
   right: 0;
@@ -499,8 +506,9 @@ padding: 35px 0 180px;}
 .newsletter-form {
     margin-top: 25px;
 }
-a {color: #1abc9c}
-a:hover, a:focus {color: #17a78b}
+a {color: #fff}
+/* texto color cambio 17a68a */
+a:hover, a:focus {color: #000;}
 .footer-bottom-area {
   background: none repeat scroll 0 0 #000;
   color: #fff;
@@ -564,21 +572,17 @@ width: 10px;
 
 .product-bit-title h2 {
   font-family: raleway;
-  font-size: 50px;
-  font-weight: 200;
+  font-size: 40px;
+  font-weight: 400;
   margin: 0;
-  padding: 50px 0;color: #fff;
+  padding: 30px 0;color: #fff;
 }
 
 .single-product-area .zigzag-bottom {background-color: #333333}
 
 .single-product-area {
-  padding: 80px 0 130px;
+  padding: 40px 0 130px 0px;
 }
-
-
-
-
 
 .sidebar-title {
     color: #3dc6ab;
@@ -592,6 +596,10 @@ width: 10px;
 input[type="text"], input[type="password"], input[type="email"], textarea {
     border: 1px solid #ddd;
     padding: 10px;
+}
+
+input[type="password"]{
+    width:300px;
 }
 input[type="submit"], button[type=submit] {
     background: none repeat scroll 0 0 #1abc9c;
@@ -1002,4 +1010,57 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 
 .pagination > li > a, .pagination > li > span {
   color: #1abc9c;
+}
+
+.menuColor:hover{
+  color: #3f3f3f;
+  text-decoration: none
+}
+
+.card-n{
+  width:100px;
+}
+
+.cuadro{
+  margin:9px;
+}
+
+.card-n1{
+  width:100px;
+  margin:0px 0px 0px 53px;
+}
+
+.card-cvv{
+  margin:0px 0px 0px 108px;
+}
+
+.fecha-mes{
+  width:237px;
+  display: inline-block;
+  margin:0px 0px 0px 45px;
+}
+
+.fecha-ano{
+  width:170px;
+  display: inline-block;
+}
+.nombre_tarjeta{
+  margin:0px 0px 0px 10px;
+  width:307px;
+}
+.numero{
+  margin:0px 0px 0px 10px;
+}
+.numero1{
+  margin:0px 0px 0px 10px;
+
+}
+
+.v{
+  border-style: solid;
+  border-width: 1px;
+}
+
+.delb{
+  text-decoration:none; 
 }

@@ -1,0 +1,85 @@
+Searching 1 file for "br"
+
+/Users/jeff/Documents/ST V1/Template-online-store-master/login.html:
+   77  <div class="vis pos-5 size-20 colwrapper">
+   78  <div class="vis pos-5 size-20 cont-13">
+   79: <input placeholder="Nombre" type="text" name="text" class="input">
+   80  </div>
+   81  <div class="vis pos-18 size-21 cont-14">
+   ..
+  146  <div class="vis pos-27 size-30 cont-3">
+  147  <div class="vis pos-5 size-31 cont-27">
+  148: <input placeholder="Nombre" type="text" name="text" class="input-2">
+  149  </div>
+  150  <div class="vis pos-28 size-32 cont-28">
+
+2 matches in 1 file
+
+
+Searching 1 file for "input"
+
+/Users/jeff/Documents/ST V1/Template-online-store-master/login.html:
+   77  <div class="vis pos-5 size-20 colwrapper">
+   78  <div class="vis pos-5 size-20 cont-13">
+   79: <input placeholder="Nombre" type="text" name="text" class="input"/>
+   80  </div>
+   81  <div class="vis pos-18 size-21 cont-14">
+   ..
+   93  <div class="vis pos-5 size-20 colwrapper">
+   94  <div class="vis pos-5 size-20 cont-16">
+   95: <input placeholder="Correo" type="text" name="email" class="input"/>
+   96  </div>
+   97  <div class="vis pos-21 size-21 cont-17">
+   ..
+  109  <div class="vis pos-5 size-23 colwrapper">
+  110  <div class="vis pos-5 size-20 cont-19">
+  111: <input placeholder="Contraseña" type="text" name="password" class="input"/>
+  112  </div>
+  113  <div class="vis pos-23 size-24 cont-3">
+  ...
+  130  <div class="vis pos-5 size-20 colwrapper">
+  131  <div class="vis pos-5 size-20 cont-23">
+  132: <input placeholder="Repetir Contraseña" type="text" name="password" class="input"/>
+  133  </div>
+  134  <div class="vis pos-18 size-28 cont-24">
+  ...
+  146  <div class="vis pos-27 size-30 cont-3">
+  147  <div class="vis pos-5 size-31 cont-27">
+  148: <input placeholder="Nombre" type="text" name="text" class="input-2"/>
+  149  </div>
+  150  <div class="vis pos-28 size-32 cont-28">
+  151: <input placeholder="Apellido" type="text" name="text" class="input-3"/>
+  152  </div>
+  153  </div>
+  154  <div class="vis pos-30 size-31 cont-29">
+  155: <input placeholder="Dni" type="text" name="text" class="input-2"/>
+  156  </div>
+  157  <div class="vis pos-31 size-33 cont-30">
+  158: <input id="checkbox-1" name="cb-inises" type="checkbox" class="input-4"/>
+  159  <label for="checkbox-1" class="font-6">Permanecer en Sesión</label>
+  160  </div>
+  161  <div class="vis pos-32 size-34 cont-3">
+  162  <div class="vis pos-5 size-35 cont-31">
+  163: <input id="checkbox-2" name="cb-inises" type="checkbox" class="input-4"/>
+  164  <label for="checkbox-2" class="font-7">Acepto los</label>
+  165  </div>
+  ...
+  187  <div class="vis pos-5 size-44 colwrapper">
+  188  <div class="vis pos-5 size-44 cont-39">
+  189: <input type="text" name="text" class="input-5"/>
+  190  </div>
+  191  <div class="vis pos-40 size-26 cont-40">
+  ...
+  206  </div>
+  207  <div class="vis pos-43 size-46 cont-43">
+  208: <input type="text" name="text" class="input-6"/>
+  209  </div>
+  210  <div class="vis pos-44 size-47 cont-44"/>
+  ...
+  223  </div>
+  224  <div class="vis pos-47 size-33 cont-47">
+  225: <input id="checkbox-3" name="cb-inises" type="checkbox" class="input-4"/>
+  226  <label for="checkbox-3" class="font-6">Permanecer en Sesión</label>
+  227  </div>
+
+24 matches in 1 file

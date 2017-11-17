@@ -1,4 +1,8 @@
-# Template-online-store
-Template de una tienda online, hecho en html, css y js
+# SOWAD PRESENTACION T2
+Front End Part 
 
-## LÉEME - EN CONSTRUCCIÓN
+Integrantes:
+---------------
++ JORGE BUSTAMANTE
++ JEFFERSON RAMIREZ
++ DIEGO ANGULO

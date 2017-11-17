@@ -1,0 +1,48 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";
+
+input[type="checkbox"]{
+  display:none;
+}
+input[type="checkbox"] +.label-text1:before{
+     content: "\f08a";
+     font-family:"FontAwesome";
+     speak:none;
+     line-height:1;
+     width:1em;
+     display:inline-block;
+     margin-right:5px;
+     font-size:25px;
+     color:#b3b3b3; 
+  }
+
+input[type="checkbox"]:checked + .label-text1:before{
+   content: "\f004";
+   color:#f34444; 
+   font-size:25px;
+  }
+
+input[type="checkbox"]{
+  display:none;
+}
+input[type="checkbox"] +.label-whislist:before{
+     content: "\f08a";
+     font-family:"FontAwesome";
+     speak:none;
+     line-height:1;
+     width:1em;
+     display:inline-block;
+     margin-right:5px;
+     font-size:18px;
+     color:#b3b3b3; 
+  }
+
+input[type="checkbox"]:checked + .label-whislist:before{
+   content: "\f004";
+   color:#f34444; 
+   font-size:18px;
+  }
+
+
+.q{
+ margin-top:20px !important;
+}

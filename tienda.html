@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tech's Bar Innovation</title>
+    
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/cambiosJeff.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="assets/css/theme-default.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/topbar.css" th:href="@{assets/css/topbar.css}" />
+    <link rel="stylesheet" href="css/dropdown.css"/>
+    <link rel="stylesheet" href="css/wishlist.css"/>
+
+
+  </head>
+  <body>
+   
+        
+  <div class="mainmenu-area"> <!-- menú pegajoso -->
+
+                <!-- Menu login -->
+                <div class="header-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="user-menu">
+                                    <ul>
+
+                                        <li><a class="menuC" href="#" sec:authorize="isAuthenticated()"><i class="fa fa-heart"></i> Wishlist</a></li>
+                                        <li><a class="menuC" href="carritoBar.html"><i class="fa fa-cart-arrow-down"></i> Carrito</a></li>
+                                        <li><a class="menuC" href="CheckOut.html"><i class="fa fa-money"></i> Checkout</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="header-right ">
+                                    <ul class="list-unstyled list-inline">
+                                            <!-- MENU CUANDO EL USUARIO SE LOGEA -->
+                                            <li class="hidden dropdown dropdown-small " sec:authorize="isAuthenticated()">
+                                                <a data-toggle="dropdown" data-hover="" class="nombreuser" href="#" style="margin:0"><span>Bienvenido, Diego Angulex </span><span th:text="${#authentication.name}"></span> <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                                <ul style="left:250px; top:32px" class="dropdown-menu">
+                                                    <li><a href="config_cliente.html" class="link1">Configuracion</a></li>
+                                                    <li><a href="#" class="link1">Pedidos Realizados</a></li>
+                                                    <form id="form-cerrar-sesion" th:action="@{/logout}" method="POST">                                                        
+                                                    </form>
+                                                    <li><a href="#" class="link1" onclick="document.getElementById('form-cerrar-sesion').submit()" >Cerrar Sesión</a></li>
+                                                </ul>
+                                            </li> 
+                                            <!-- FIN MENU CUANDO EL USUARIO SE LOGEA -->
+
+                                             <!-- LOG IN DE MENU-->
+                                            <li class="auth--header dropdown auth__nav-item">
+                                              <button data-toggle="dropdown" type="button"
+                                               class="logtitle"><i class="fa fa-sign-in"></i> Log in
+                                              </button>
+                                              <div class="dropdown__menu auth__dropdown--login">
+                                               
+                                                <h5 class="titulod">Iniciar Sesión</h5>
+                                                <form action="#" class="form form--flex">
+                                                  <div class="row">
+                                                    <div class="form-group">
+                                                      <label for="login-username-dropdown" class="txtform">Usuario</label>
+                                                      <input type="text" name="username" id="login-username-dropdown" required data-parsley-trigger="keyup" data-parsley-minlength="6" data-parsley-validation-threshold="5" data-parsley-minlength-message="Login should be at least 6 chars" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <label for="login-password-dropdown" class="txtform">Contraseña</label>
+                                                      <input type="password" name="password" id="login-password-dropdown" required class="form-control">
+                                                    </div>
+                                                  </div>
+                                                     <div class="row">
+                                                      <a href="#" class="olvide">Olvide Contraseña</a>
+                                                       <button type="submit" class="btnis">Iniciar Sesión</button>
+                                                     </div>
+                                                  <div class="gap row form__remember">
+                                                    <input type="checkbox" id="remember-in-dropdown" class="in-checkbox check">
+                                                    <label for="remember-in-dropdown" class="in-label rem">Recuérdame</label>
+                                                  </div>
+                                                  <br/>
+                                                  <div class="row">
+                                                    <span class="txtac">No tienes Cuenta?</span><button type="button" class="btnrg">Registrame</button>
+                                                  </div>
+                                                </form>
+                                              </div>
+                                            </li>
+                                              <!-- FIN LOG IN DE MENU-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Fin menú login -->
+
+                <!-- Menú de navegación --> 
+                <div class="container">
+                    <div class="row">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+
+                            </button>
+                        </div> 
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html"><img src="img/logo_bar.png"/></a></li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+
+                            <li class="active menubar"><a href="index.html" >Inicio</a></li>
+                            <li class="menubar"><a href="tienda.html">Tienda</a></li>
+                            <li class="menubar"><a href="CheckOut.html">Checkout</a></li>                        
+                            <!--<li class="menubar"><a href="#">Contactános</a></li>-->
+                            <li class="menubar"><a href="#" th:href="@{/index/}">Test</a></li>
+                            <li class="menubar"><a href="dashboard_main.html">Dashboard</a></li></li><!-- Acceso autorizado -->     
+
+
+                        </ul>
+                        <ul class="nav navbar-nav pull-right" style="margin-top: 19px">
+                            <li class="carrito"><a href="carritoBar.html">Carrito - <span class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a></li>
+                        </ul>
+
+                    </div>  
+
+                </div>
+  </div>
+   
+    <!-- Tienda -->
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Tienda</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="single-product-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                 <div class="col-md-4">
+                    <div class="single-sidebar">
+                        <h2 class="sidebar-title">Buscar Producto</h2>
+                        <form action="">
+                            <input type="text" placeholder="Buscar Productos...">
+                            <input type="submit" value="Buscar">
+                        </form>
+                    </div>
+                     <h2 class="sidebar-title">FILTRO POR</h2>
+                     <p>
+                         <label class="" for="">Categoria</label>
+                          <select class="" id="" name="">
+                                  <option value="">Seleccione Categoria</option>
+                                  <option value="1">C 1</option>
+                                  <option value="2">C 2</option>
+                                  <option value="3">C 3</option>
+                                  </select>                    
+                     </p>
+                     <p>
+                         <label class="" for="">Marca</label>
+                          <select class="" id="" name="">
+                                  <option value="">Seleccione Marca</option>
+                                  <option value="1">M 1</option>
+                                  <option value="2">M 2</option>
+                                  <option value="3">M 3</option>
+                                  </select>                    
+                     </p>
+ 
+                    <br/>
+                    <br/>
+
+
+                    <div class="single-sidebar">
+                        <h2 class="sidebar-title">Productos</h2>
+                        <div class="thubmnail-recent">
+                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
+                            <h2><a href="">Sony Smart TV - 2015</a></h2>
+                            <div class="product-sidebar-price">
+                                <ins>$700.00</ins> <del>$800.00</del>
+                            </div>                             
+                        </div>
+                        <div class="thubmnail-recent">
+                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
+                            <h2><a href="">Sony Smart TV - 2015</a></h2>
+                            <div class="product-sidebar-price">
+                                <ins>$700.00</ins> <del>$800.00</del>
+                            </div>                             
+                        </div>
+                        <div class="thubmnail-recent">
+                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
+                            <h2><a href="">Sony Smart TV - 2015</a></h2>
+                            <div class="product-sidebar-price">
+                                <ins>$700.00</ins> <del>$800.00</del>
+                            </div>                             
+                        </div>
+                        <div class="thubmnail-recent">
+                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
+                            <h2><a href="">Sony Smart TV - 2015</a></h2>
+                            <div class="product-sidebar-price">
+                                <ins>$700.00</ins> <del>$800.00</del>
+                            </div>                             
+                        </div>
+                    </div>
+                    
+                    <div class="single-sidebar">
+                        <h2 class="sidebar-title">Post Relacionado</h2>
+                        <ul>
+                            <li><a href="">Sony Smart TV - 2015</a></li>
+                            <li><a href="">Sony Smart TV - 2015</a></li>
+                            <li><a href="">Sony Smart TV - 2015</a></li>
+                            <li><a href="">Sony Smart TV - 2015</a></li>
+                            <li><a href="">Sony Smart TV - 2015</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-8">
+                    <div class="product-content-right">
+                       <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <img src="img/Productos/Producto1/Producto1-1.jpg" height="400" width="400" alt="">
+                        </div>
+                        <h2><a href="venta-de-product.html">Apple new mac book 2015 March :P</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>$899.00</ins> <del>$999.00</del>
+                        </div>  
+                        
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
+                             <label style="padding-left:10px; vertical-align:bottom;" class="heart"><input type="checkbox"><span class="label-text1"></span></label>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <img src="img/Productos/Producto2/Producto2-1.jpg" height="400" width="400" alt="">
+                        </div>
+                        <h2><a href="venta-de-product.html">Apple new mac book 2015 March :P</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>$899.00</ins> <del>$999.00</del>
+                        </div>  
+                        
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
+                              <label style="padding-left:10px; vertical-align:bottom;" class="heart"><input type="checkbox"><span class="label-text1"></span></label>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <img src="img/Productos/Producto3/Producto3-1.jpg" height="400" width="400" alt="">
+                        </div>
+                        <h2><a href="venta-de-product.html">Apple new mac book 2015 March :P</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>$899.00</ins> <del>$999.00</del>
+                        </div>  
+                        
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
+                              <label style="padding-left:10px; vertical-align:bottom;" class="heart"><input type="checkbox"><span class="label-text1"></span></label>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <img src="img/Productos/Producto9/Producto9-1.jpg" height="400" width="400" alt="">
+                        </div>
+                        <h2><a href="venta-de-product.html">Apple new mac book 2015 March :P</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>$899.00</ins> <del>$999.00</del>
+                        </div>  
+                        
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
+                              <label style="padding-left:10px; vertical-align:bottom;" class="heart"><input type="checkbox"><span class="label-text1"></span></label>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <img src="img/Productos/Producto10/Producto10-1.jpg" height="400" width="400" alt="">
+                        </div>
+                        <h2><a href="venta-de-product.html">Apple new mac book 2015 March :P</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>$899.00</ins> <del>$999.00</del>
+                        </div>  
+                        
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
+                              <label style="padding-left:10px; vertical-align:bottom;" class="heart"><input type="checkbox"><span class="label-text1"></span></label>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <img src="img/Productos/Producto11/Producto11-1.jpg" height="400" width="400" alt="">
+                        </div>
+                        <h2><a href="venta-de-product.html">Apple new mac book 2015 March :P</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>$899.00</ins> <del>$999.00</del>
+                        </div>  
+                        
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
+                              <label style="padding-left:10px; vertical-align:bottom;" class="heart"><input type="checkbox"><span class="label-text1"></span></label>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <img src="img/Productos/Producto12/Producto12-1.jpg" height="400" width="400" alt="">
+                        </div>
+                        <h2><a href="venta-de-product.html">Apple new mac book 2015 March :P</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>$899.00</ins> <del>$999.00</del>
+                        </div>  
+                        
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
+                              <label style="padding-left:10px; vertical-align:bottom;" class="heart"><input type="checkbox"><span class="label-text1"></span></label>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <img src="img/Productos/Producto21/Producto21-1.jpg" height="400" width="400" alt="">
+                        </div>
+                        <h2><a href="venta-de-product.html">Apple new mac book 2015 March :P</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>$899.00</ins> <del>$999.00</del>
+                        </div>  
+                        
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
+                              <label style="padding-left:10px; vertical-align:bottom;" class="heart"><input type="checkbox"><span class="label-text1"></span></label>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                               <img src="img/Productos/Producto21/Producto21-1.jpg" height="400" width="400" alt="">
+                        </div>
+                        <h2><a href="venta-de-product.html">Apple new mac book 2015 March :P</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>$899.00</ins> <del>$999.00</del>
+                        </div>  
+                        
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
+                            <label style="padding-left:10px; vertical-align:bottom;" class="heart"><input type="checkbox"><span class="label-text1"></span></label>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                               <img src="img/Productos/Producto21/Producto21-1.jpg" height="400" width="400" alt="">
+                        </div>
+                        <h2><a href="venta-de-product.html">Apple new mac book 2015 March :P</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>$899.00</ins> <del>$999.00</del>
+                        </div>  
+                        
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
+                              <label style="padding-left:10px; vertical-align:bottom;" class="heart"><input type="checkbox"><span class="label-text1"></span></label>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                               <img src="img/Productos/Producto21/Producto21-1.jpg" height="400" width="400" alt="">
+                        </div>
+                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>$899.00</ins> <del>$999.00</del>
+                        </div>  
+                        
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
+                              <label style="padding-left:10px; vertical-align:bottom;" class="heart"><input type="checkbox"><span class="label-text1"></span></label>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                              <img src="img/Productos/Producto21/Producto21-1.jpg" height="400" width="400" alt="">
+                        </div>
+                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>$899.00</ins> <del>$999.00</del>
+                        </div>  
+                        
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
+                              <label style="padding-left:10px; vertical-align:bottom;" class="heart"><input type="checkbox"><span class="label-text1"></span></label>
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-pagination text-center">
+                        <nav>
+                          <ul class="pagination">
+                            <li>
+                              <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                              </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                              <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                        </div>                       
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- fin checkout -->
+    <div class="footer-top-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="footer-about-us">
+                        <h2><img src="img/logo_bar.png"></img></h2>
+                        <br />
+                        <p style="color:white;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt id doloribus vero quam laborum quas alias dolores blanditiis iusto consequatur, modi aliquid eveniet eligendi iure eaque ipsam iste, pariatur omnis sint! Suscipit, debitis, quisquam. Laborum commodi veritatis magni at?</p>
+                        <div class="footer-social">
+                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                    <div class="footer-newsletter">
+                        <h2 class="footer-wid-title">Boletines de Suscripción</h2>
+                        <p style="color:white;">Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
+                        <div class="newsletter-form">
+                            <form action="#">
+                                <input type="email" placeholder="Ingrese su Correo"/>
+                                <input type="submit" value="Subscríbeme"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End footer top area -->
+    
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="copyright">
+                        <p style="color:white;">&copy; 2017 Tech's Bar | Todos Los Derechos Reservado by <a href="!#" target="_blank">Bustamante Angulo Ramirez = BAR</a></p>                        
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="footer-card-icon">
+                        <i class="fa fa-cc-discover"></i>
+                        <i class="fa fa-cc-mastercard"></i>
+                        <i class="fa fa-cc-paypal"></i>
+                        <i class="fa fa-cc-visa"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End footer bottom area -->
+   
+    <!-- Latest jQuery form server -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    
+    <!-- Bootstrap JS form CDN -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+    <!-- jQuery sticky menu -->
+    <script src="js/app.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    
+    <!-- jQuery easing -->
+    <script src="js/jquery.easing.1.3.min.js"></script>
+    
+    <!-- Main Script -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

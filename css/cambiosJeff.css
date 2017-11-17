@@ -1,0 +1,435 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";
+
+
+
+.d:hover{
+	background: #fff;
+}
+
+
+
+.content1 {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.slider-area {
+  padding: 5px 40px;
+  border: 1px solid #ddd;
+}
+
+.slider {
+  margin-top: 50px;
+}
+
+.htitle:hover{
+	background-color: rgba(38, 33, 29, 0.04);
+}
+
+.cen{
+	margin: auto;
+	padding: 0;
+}
+
+.cen1{
+	margin: auto;
+	margin-top: 20px;
+	padding: 5px;
+	padding-bottom: 30px;
+}
+
+.marcas8{
+	width:126px !important;
+	height: 115px !important;
+	padding:5px;
+}
+
+.marcasc{
+	margin: 0 auto !important;
+	text-align: center !important;
+}
+
+input[type="checkbox"]{
+	display:none;
+}
+input[type="checkbox"] +.label-text:before{
+	   content: "\f096";
+	   font-family:"FontAwesome";
+	   speak:none;
+	   line-height:1;
+	   width:1em;
+	   display:inline-block;
+	   margin-right:5px;
+	}
+
+input[type="checkbox"]:checked + .label-text:before{
+	 content: "\f14a";
+	 color:#06a3e9;	
+
+	}
+
+
+.btnda{
+	background:#F3B75E !important;
+	color:#323232;
+}
+
+.btnda:hover{
+	background:#b3b2b2 !important;
+	color:#fff;
+}
+
+.pf{
+	padding:10px !important;
+}
+
+
+/* config-cliente - tarjeta de credito */
+
+.full-card{
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+.card-new{
+	width:96px;
+
+}
+
+.card-titulos{
+	padding-left: 16px;
+	padding-top: 10px;
+}
+
+.card-boxes{
+	width:398px;
+}
+
+.card-mes{
+	width:221px !important;
+	display: inline-block;
+	padding:11px;
+}
+
+.card-ano{
+	width:170px !important;
+	display: inline-block;
+	padding:11px;
+}
+
+.ccv{
+	padding-top: 35px;
+
+}
+
+.card-ccv{
+	width:130px;
+	margin-left:15px; 
+}
+
+.card-btn{
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+.md{
+	width:400px !important;
+	height:400px !important; 
+
+}
+
+.paginacion{
+	display: inline-block;
+
+}
+
+.paginacion a{
+
+  list-style-type: none;
+   
+  padding: 8px 20px;
+  color: #222;
+  float:left;
+  text-decoration: none;
+   border-radius: 5px;
+}
+
+
+.paginacion a.active{
+	background-color: #1abc9c;
+	color:#fff;
+
+	padding-left: 24px;
+	padding-top:13px;
+	padding-bottom:13px;
+	padding-right: 24px;
+	margin-top: -6px;
+
+}
+.pa{
+	
+	 margin-left: 4px;
+	 margin-right: 4px;
+
+}
+
+
+
+.paginacion a:hover:not(.active) {
+	background-color: #1abc9c;
+	color:#fff;
+}
+
+/*HAMBURGUESA*/
+
+
+
+
+
+.hamburger:before, .hamburger:after {
+  transition: 0.25s;
+  transform: all 0.25s ease-in;
+  content: "";
+}
+
+
+
+.btn-menu {
+  float:right;
+  display: block;
+  margin: -40px 60px 0 0px;
+}
+
+.hamburger, .hamburger:before, .hamburger:after {
+  width: 2rem;
+  height: 0.325rem;
+  background: #fff;
+  border-radius: 1em;
+  display: block;
+}
+
+.hamburger:before {
+  top: -0.9em;
+  position: absolute;
+}
+
+.hamburger:after {
+  top: 0.7em;
+  position: absolute;
+}
+
+.hamburger {
+  position: absolute;
+  transition: 0.25s;
+}
+
+a.open .hamburger {
+  transform: rotate(45deg) translateZ(0);
+  margin-left: 0.2em;
+}
+a.open .hamburger:before {
+  border-radius: 50%;
+  height: 2.75em;
+  width: 2.75em;
+  background: transparent;
+  border: 4px solid #fff;
+  margin-left: -.70em;
+  top: -1.30em;
+}
+a.open .hamburger:after {
+  top: 0;
+  transform: rotate(90deg) translateZ(0);
+}
+
+
+
+
+
+
+
+
+/*menu principal
+TEXTO MENU*/
+
+
+.menubar{
+	padding-top: 60px;
+	color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.textomenu{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+   
+}
+
+.fondo{
+	background: rgba(30, 30, 38, 0.86);
+}
+
+.menu_bar {
+	display:none;
+}
+ 
+
+ 
+body {
+	background:#FFFFFA;
+}
+ 
+header {
+	width:100%;
+}
+
+header nav ul {
+	overflow:hidden;
+	list-style:none;
+	margin-left: 40px;
+}
+
+
+header nav {
+	width:90%;
+	max-width:900px;
+	margin:-60px 0 0 190px;
+	font-weight: 700;
+	font-size: 16px;
+}
+
+header nav ul li {
+	float:left;
+
+}
+ 
+header nav ul li a {
+	color:#fff;
+	padding:20px;
+	text-decoration:none;
+}
+
+header nav ul li a:hover {
+	color:#333;
+	text-decoration:none;
+}
+ 
+header nav ul li span {
+	margin-right:10px;
+}
+
+.app{
+	 float: right;
+
+}
+
+.camcarrito{
+	margin-top:15px;
+
+	color:#fff;
+	list-style:none;
+}
+
+.topmenu{
+	font-weight: 700;
+}
+
+.topmenu:hover{
+	color:#333;
+	text-decoration: none;
+}
+
+
+
+@media screen and (max-width:1000px ) {
+	header nav {
+		width:80%;
+		height:100%;
+		z-index: 999;
+		margin:0;
+		position: fixed;
+	}
+
+	.camcarrito{
+
+		display: none;
+
+	}
+
+	.app{
+		display: none;
+			
+	}
+
+	header nav div {
+		display: none;
+	}
+
+	.slide-content{
+		display:none;
+	}
+
+	header nav ul li {
+	text-align: center;
+
+	display: block;
+	border-bottom:1px solid rgba(255,255,255, .3);
+	max-width: 600px;
+	
+	padding:18px;
+	background: #1abc9c;
+
+	}
+
+	header nav ul li 	{
+	float:none;
+		}
+ 
+ 
+	.menu_bar {
+		display:block;
+		width:100%;
+		background:#ccc;
+	}
+ 
+	.menu_bar .bt-menu {
+		display:block;
+		padding:20px;
+		background:#024959;
+		color:#fff;
+		text-decoration:none;
+		font-weight: bold;
+		font-size:25px;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+ 
+	.menu_bar span {
+		float:right;
+		font-size:40px;
+	}
+
+
+}
+
+@media screen and (max-width:1200px ) {
+	
+
+	.ref {
+		float:none;
+	
+	}
+
+
+	@media only screen and (max-width: 767px) {
+	  .previous_btn {
+	    left: 50px;
+	  }
+	  .next_btn {
+	    right: 50px;
+	  }
+	}
+}
+
